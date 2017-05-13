@@ -1,4 +1,4 @@
-package dsa2017.day2.submission1;
+package dsa2017.day2.submission_GC00936_Hai_Ly;
 
 import java.awt.Color;
 import java.awt.Desktop;
