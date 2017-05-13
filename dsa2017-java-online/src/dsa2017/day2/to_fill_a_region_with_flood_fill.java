@@ -9,12 +9,14 @@ import java.util.Stack;
 
 import javax.imageio.ImageIO;
 
+import dsa2017.utils.Res;
+
 public class to_fill_a_region_with_flood_fill {
 
 	public static void main(String[] args) throws Exception
 	{
-		File input = getDesktopFile("input.png");		
-		File output = getDesktopFile("output.png");		
+		File input = Res.getDesktopFile("input.png");		
+		File output = Res.getDesktopFile("output.png");		
 		
 		Desktop.getDesktop().open(input);
 		floodfill(input, new Point(174, 94), Color.red, output);
@@ -50,9 +52,5 @@ public class to_fill_a_region_with_flood_fill {
 		ImageIO.write(img, "png", output);
 	}
 
-	private static File getDesktopFile(String name)
-	{
-		return new File(System.getProperty("user.home") + "/Desktop/" + name);
-	}
 
 }
