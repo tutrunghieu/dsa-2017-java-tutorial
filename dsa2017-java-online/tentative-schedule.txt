@@ -1,0 +1,26 @@
+--- week1, 10m05y2017
+!!! Policies, schedule
++ data structure, algorithm, pseudo-code, flowchart
++ list, single-link, double-link, circular
++ stack, queue, priority
+
+--- week2, 15m05y2017
+!!! Asgn1
++ recursive
++ sort 1
++ sort 2
+
+--- week3, 22m05y2017
+!!! Asgn2
++ string 1
++ string 2
++ tree 1
++ tree 2
++ tree 3
+
+--- week4, 29m05y2017
++ graph 1
++ graph 2
+
+
+

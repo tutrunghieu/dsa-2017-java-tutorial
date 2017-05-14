@@ -42,19 +42,13 @@ public class to_test_quick_sort {
 		 if(a[j].compareTo(pivot) <= 0) 
 		 {
 			 i++;
-			 swap(a, i, j);
+			 SortUtils.swap(a, i, j);
 		 }
 		 
-		swap(a, i+1, right-1);
+		SortUtils.swap(a, i+1, right-1);
 	    return i + 1;
 	}
 
-	private static<T1> void swap(T1[] a, int x, int y) 
-	{
-		T1 t = a[x];
-		a[x] = a[y];
-		a[y] = t;
-	}
 	
 
 }
