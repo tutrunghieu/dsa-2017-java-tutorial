@@ -12,6 +12,8 @@ import dsa2017.proto.controllers.Edit_Select_All;
 import dsa2017.proto.controllers.File_New;
 import dsa2017.proto.controllers.File_Open;
 import dsa2017.proto.controllers.File_Save;
+import dsa2017.proto.controllers.Help_About;
+import dsa2017.proto.controllers.Help_Search;
 import dsa2017.proto.swing.SwingMenuBar;
 import dsa2017.proto.swing.SwingTarget;
 
@@ -34,7 +36,10 @@ public class ProtoMenuBar extends SwingMenuBar
 	
 	public JMenuItem menu_file_save_as;
 
+	@SwingTarget(Help_About.class)
 	public JMenuItem menu_help_about;
+
+	@SwingTarget(Help_Search.class)
 	public JMenuItem menu_help_search;
 	
 	@SwingTarget(Edit_Clear.class)
