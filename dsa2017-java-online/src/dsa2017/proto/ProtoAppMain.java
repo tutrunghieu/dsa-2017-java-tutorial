@@ -1,30 +1,20 @@
 package dsa2017.proto;
 
-import java.awt.event.KeyEvent;
-
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
+import dsa2017.proto.swing.ProtoAppMain1970;
+
 @SuppressWarnings("serial")
 public class ProtoAppMain extends ProtoAppMain1970 
 {
-	private JTextArea mainView;
-	private JScrollPane mainOuter;
+	protected ProtoMenuBar menuBar;
+	protected JTextArea mainView;
+	protected JScrollPane mainOuter;
 	
-	private JMenuBar menuBar;
-	private JMenu menu_file;
-	private JMenu menu_edit;
-	private JMenu menu_help;
-	private JMenuItem menu_file_new;
-	private JMenuItem menu_file_open;
-	private JMenuItem menu_file_save;
-	private JMenuItem menu_file_save_as;
 
 	public ProtoAppMain() 
 	{
@@ -33,30 +23,11 @@ public class ProtoAppMain extends ProtoAppMain1970
 		this.setTitle("Project 1");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		this.createMenuBar();
+		menuBar = new ProtoMenuBar();
+		menuBar.createMenuBar(this);
+		
 		this.createMainView();
-
 	}
-
-	private void createMenuBar() {
-		this.setJMenuBar(menuBar = new JMenuBar());
-
-		menuBar.add(menu_file = newJMenu("File", KeyEvent.VK_F));
-
-		menuBar.add(menu_edit = new JMenu("Edit"));
-		menu_edit.setMnemonic(KeyEvent.VK_E);
-
-		menuBar.add(menu_help = new JMenu("Help"));
-		menu_help.setMnemonic(KeyEvent.VK_H);
-
-		menu_file.add(menu_file_new = newJMenuItem("New", KeyEvent.VK_N, KeyEvent.VK_N));
-		menu_file.add(menu_file_open = newJMenuItem("Open", KeyEvent.VK_O, KeyEvent.VK_O));
-
-		menu_file.addSeparator();
-		menu_file.add(menu_file_save = newJMenuItem("Save", KeyEvent.VK_S, KeyEvent.VK_S));
-		menu_file.add(menu_file_save_as = new JMenuItem("Save as..."));
-	}
-
 
 
 	private void createMainView() 

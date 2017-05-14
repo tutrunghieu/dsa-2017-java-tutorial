@@ -1,16 +1,12 @@
-package dsa2017.proto;
+package dsa2017.proto.swing;
 
 import java.awt.event.ActionEvent;
-import java.util.Map;
-import java.util.TreeMap;
 
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-public class ProtoAppMain1970 extends JFrame 
-{
+public class ProtoMenuBar1970 {
 	protected JMenu newJMenu(String name, int key) 
 	{
 		JMenu res = new JMenu(name);
