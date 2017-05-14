@@ -1,19 +1,17 @@
-package dsa2017.proto.swing;
+package dsa2017.swing;
 
 import java.awt.event.ActionEvent;
 import java.lang.reflect.Field;
 
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-import dsa2017.proto.ProtoAppMain;
 import dsa2017.proto.ProtoMenuBar;
 
 public class SwingMenuBar 
 {
-	public void bind(JFrame frame) 
+	public void bind() 
 	{
 		for(Field fj: ProtoMenuBar.class.getFields())
 		try
@@ -23,17 +21,17 @@ public class SwingMenuBar
 			
 			JMenuItem mj = (JMenuItem)fj.get(this);
 			
-			bind(mj, tj.value(), fj, frame);
+			bind(mj, tj.value(), fj);
 		}
 		catch(Exception xp) {
 			xp.printStackTrace();
 		}
 	}
 	
-	public void bind(JMenuItem mj, Class<?> cj, Field fj, JFrame frame) 
+	public void bind(JMenuItem mj, Class<?> cj, Field fj) 
 	{
 		System.out.println("binding " + mj.getText() + " to " + cj.getName());	
-		mj.addActionListener( new SwingActionListener(mj, cj, fj, frame) );
+		mj.addActionListener( new SwingActionListener(mj, cj, fj) );
 	}
 
 	

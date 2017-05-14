@@ -1,52 +1,17 @@
 package dsa2017.proto;
 
 import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
-import dsa2017.proto.swing.SwingMainFrame;
-
-@SuppressWarnings("serial")
-public class ProtoAppMain extends SwingMainFrame 
+public class ProtoAppMain 
 {
-	public static ProtoAppMain useFrame()
+	private static ProtoMainFrame __frame;
+	
+	public static ProtoMainFrame useFrame()
 	{
 		return __frame;
 	}
 	
-	private static ProtoAppMain __frame;
-	
-	protected ProtoMenuBar menuBar;
-	protected JTextArea mainView;
-	protected JScrollPane mainOuter;
-	
-
-	public ProtoAppMain() 
-	{
-		this.setLocation(50, 50);
-		this.setSize(400, 700);
-		this.setTitle("Project 1");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		menuBar = new ProtoMenuBar();
-		menuBar.createMenuBar(this);
-		menuBar.bind(this);
-		
-		this.createMainView();
-	}
-
-
-	private void createMainView() 
-	{
-		this.add(mainOuter = new JScrollPane(mainView = new JTextArea()));
-
-		for (int k = 0; k < 1000; k++)
-			mainView.append("Line " + k + "\r\n");
-
-	}
-
 	public static void main(String[] args) throws Exception 
 	{
 //		UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
@@ -58,16 +23,11 @@ public class ProtoAppMain extends SwingMainFrame
 		UIManager.put("MenuBar.border", BorderFactory.createCompoundBorder() );
 //		UIManager.put("MenuItem.border", BorderFactory.createLineBorder(Color.gray, 1));		
 		  
-		__frame = new ProtoAppMain();
+		__frame = new ProtoMainFrame();
 
 		__frame.setVisible(true);
 
 	}
-
-
-	public void clearMainView() 
-	{
-		mainView.setText("");
-	}
+	
 
 }

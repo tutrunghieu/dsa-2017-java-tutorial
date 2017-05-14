@@ -1,4 +1,4 @@
-package dsa2017.proto.swing;
+package dsa2017.swing;
 
 import java.awt.event.ActionEvent;
 

@@ -14,8 +14,8 @@ import dsa2017.proto.controllers.File_Open;
 import dsa2017.proto.controllers.File_Save;
 import dsa2017.proto.controllers.Help_About;
 import dsa2017.proto.controllers.Help_Search;
-import dsa2017.proto.swing.SwingMenuBar;
-import dsa2017.proto.swing.SwingTarget;
+import dsa2017.swing.SwingMenuBar;
+import dsa2017.swing.SwingTarget;
 
 public class ProtoMenuBar extends SwingMenuBar
 {
@@ -70,7 +70,5 @@ public class ProtoMenuBar extends SwingMenuBar
 		menu_help.add(menu_help_search = newJMenuItem("Search", KeyEvent.VK_S, KeyEvent.VK_F2));
 	}	
 	
-	
-
 	
 }
