@@ -7,5 +7,5 @@ import javax.swing.JMenuItem;
 
 public interface SwingActionListener extends ActionListener 
 {
-	void setActionParams(JMenuItem mj, Class<? extends ActionListener> cj, Field fj);
+	void setActionParams(JMenuItem mj, Class<? extends SwingActionListener> cj, Field fj);
 }

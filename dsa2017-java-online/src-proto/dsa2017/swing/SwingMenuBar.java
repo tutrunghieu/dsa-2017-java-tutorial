@@ -1,7 +1,6 @@
 package dsa2017.swing;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 
 import javax.swing.JMenu;
@@ -29,14 +28,12 @@ public class SwingMenuBar
 		}
 	}
 	
-	public void bind(JMenuItem mj, Class<? extends ActionListener> cj, Field fj) throws Exception
+	public void bind(JMenuItem mj, Class<? extends SwingActionListener> cj, Field fj) throws Exception
 	{
 		System.out.println("binding " + mj.getText() + " to " + cj.getName());	
 		
-		ActionListener tj = cj.newInstance();
-		SwingActionListener t1 = (SwingActionListener)tj;
-		t1.setActionParams(mj, cj, fj);
-		
+		SwingActionListener tj = cj.newInstance();
+		tj.setActionParams(mj, cj, fj);
 		mj.addActionListener(tj);
 	}
 

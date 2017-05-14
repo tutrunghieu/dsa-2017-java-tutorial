@@ -1,7 +1,6 @@
 package dsa2017.proto.controllers;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 
 import javax.swing.JMenuItem;
@@ -24,8 +23,9 @@ public class __BaseModule implements SwingActionListener {
 	}
 
 	@Override
-	public void setActionParams(JMenuItem mj, Class<? extends ActionListener> cj, Field fj) {
-		// TODO Auto-generated method stub
+	public void setActionParams(JMenuItem mj, Class<? extends SwingActionListener> cj, Field fj) 
+	{
+		System.out.println(  mj.getText()  + " >> " + fj.getName() + " >> " + cj.getName());
 		
 	}
 
