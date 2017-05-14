@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 
+import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 
 public class SwingActionListener implements ActionListener
@@ -11,11 +12,14 @@ public class SwingActionListener implements ActionListener
 	public JMenuItem actionSource;
 	public Class<?> actionTarget;
 	public Field actionField;
+	public JFrame actionFrame;
 
-	public SwingActionListener(JMenuItem mj, Class<?> cj, Field fj) {
+	public SwingActionListener(JMenuItem mj, Class<?> cj, Field fj, JFrame frame) 
+	{
 		actionSource = mj;
 		actionTarget = cj;
 		actionField = fj;
+		actionFrame = frame;
 	}
 
 	@Override

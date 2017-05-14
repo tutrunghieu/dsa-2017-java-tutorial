@@ -25,7 +25,7 @@ public class ProtoAppMain extends SwingMainFrame
 
 		menuBar = new ProtoMenuBar();
 		menuBar.createMenuBar(this);
-		menuBar.bind();
+		menuBar.bind(this);
 		
 		this.createMainView();
 	}
