@@ -1,5 +1,5 @@
 package dsa2017.proto.controllers;
 
-public class File_New {
+public class File_New extends __BaseModule {
 
 }
