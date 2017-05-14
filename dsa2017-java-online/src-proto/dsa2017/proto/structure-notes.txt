@@ -1,0 +1,7 @@
++ one action class can serve one or many actions
+If we have many actions to the same class, we need the switcher
+
+======== creating sequence
+-- ProtoAppMain creates ProtoMainFrame
+----- ProtoMainFrame creates ProtoMenuBar
+----------- ProtoMenuBar creates Action Objects
