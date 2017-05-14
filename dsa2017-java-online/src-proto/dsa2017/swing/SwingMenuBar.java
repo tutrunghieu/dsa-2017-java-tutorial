@@ -17,7 +17,7 @@ public class SwingMenuBar
 		for(Field fj: ProtoMenuBar.class.getFields())
 		try
 		{
-			SwingTarget tj = fj.getAnnotation(SwingTarget.class);
+			SwingActionMarker tj = fj.getAnnotation(SwingActionMarker.class);
 			if(tj == null) continue;
 			
 			JMenuItem mj = (JMenuItem)fj.get(this);
@@ -34,7 +34,7 @@ public class SwingMenuBar
 		System.out.println("binding " + mj.getText() + " to " + cj.getName());	
 		
 		ActionListener tj = cj.newInstance();
-		SwingBaseModule t1 = (SwingBaseModule)tj;
+		SwingActionListener t1 = (SwingActionListener)tj;
 		t1.setActionParams(mj, cj, fj);
 		
 		mj.addActionListener(tj);

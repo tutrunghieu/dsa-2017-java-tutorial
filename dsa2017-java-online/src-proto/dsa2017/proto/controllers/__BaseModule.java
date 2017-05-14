@@ -8,9 +8,9 @@ import javax.swing.JMenuItem;
 
 import dsa2017.proto.ProtoAppMain;
 import dsa2017.proto.ProtoMainFrame;
-import dsa2017.swing.SwingBaseModule;
+import dsa2017.swing.SwingActionListener;
 
-public class __BaseModule implements SwingBaseModule {
+public class __BaseModule implements SwingActionListener {
 
 	public static ProtoMainFrame useFrame()
 	{

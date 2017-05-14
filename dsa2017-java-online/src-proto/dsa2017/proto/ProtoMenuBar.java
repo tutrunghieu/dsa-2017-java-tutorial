@@ -15,7 +15,7 @@ import dsa2017.proto.controllers.File_Save;
 import dsa2017.proto.controllers.Help_About;
 import dsa2017.proto.controllers.Help_Search;
 import dsa2017.swing.SwingMenuBar;
-import dsa2017.swing.SwingTarget;
+import dsa2017.swing.SwingActionMarker;
 
 public class ProtoMenuBar extends SwingMenuBar
 {
@@ -25,27 +25,27 @@ public class ProtoMenuBar extends SwingMenuBar
 	public JMenu menu_edit;
 	public JMenu menu_help;
 	
-	@SwingTarget(File_New.class)
+	@SwingActionMarker(File_New.class)
 	public JMenuItem menu_file_new;
 	
-	@SwingTarget(File_Open.class)
+	@SwingActionMarker(File_Open.class)
 	public JMenuItem menu_file_open;
 	
-	@SwingTarget(File_Save.class)
+	@SwingActionMarker(File_Save.class)
 	public JMenuItem menu_file_save;
 	
 	public JMenuItem menu_file_save_as;
 
-	@SwingTarget(Help_About.class)
+	@SwingActionMarker(Help_About.class)
 	public JMenuItem menu_help_about;
 
-	@SwingTarget(Help_Search.class)
+	@SwingActionMarker(Help_Search.class)
 	public JMenuItem menu_help_search;
 	
-	@SwingTarget(Edit_Clear.class)
+	@SwingActionMarker(Edit_Clear.class)
 	public JMenuItem menu_edit_clear;
 	
-	@SwingTarget(Edit_Select_All.class)
+	@SwingActionMarker(Edit_Select_All.class)
 	public JMenuItem menu_edit_select_all;
 
 	public void createMenuBar(JFrame f) 

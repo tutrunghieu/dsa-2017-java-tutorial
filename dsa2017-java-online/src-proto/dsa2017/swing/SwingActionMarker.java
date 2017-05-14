@@ -3,8 +3,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface SwingTarget {
+public @interface SwingActionMarker {
 
-	Class<? extends SwingBaseModule> value();
+	Class<? extends SwingActionListener> value();
 
 }

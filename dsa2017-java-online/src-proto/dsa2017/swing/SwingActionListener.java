@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 
 import javax.swing.JMenuItem;
 
-public interface SwingBaseModule extends ActionListener 
+public interface SwingActionListener extends ActionListener 
 {
 	void setActionParams(JMenuItem mj, Class<? extends ActionListener> cj, Field fj);
 }
