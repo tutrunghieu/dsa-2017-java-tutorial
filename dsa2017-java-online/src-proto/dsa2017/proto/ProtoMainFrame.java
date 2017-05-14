@@ -55,4 +55,6 @@ public class ProtoMainFrame  extends SwingMainFrame
 		mainView.selectAll();
 	}
 
+
+
 }
