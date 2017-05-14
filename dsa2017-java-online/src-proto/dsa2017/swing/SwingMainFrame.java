@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+@SuppressWarnings("serial")
 public class SwingMainFrame extends JFrame 
 {
 
