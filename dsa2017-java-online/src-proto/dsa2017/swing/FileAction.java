@@ -4,6 +4,6 @@ import java.io.File;
 
 public interface FileAction {
 
-	void invokeAction(File selectedFile);
+	void invokeAction(File f);
 
 }

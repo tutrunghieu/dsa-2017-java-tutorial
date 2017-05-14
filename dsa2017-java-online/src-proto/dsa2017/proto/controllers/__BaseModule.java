@@ -17,9 +17,9 @@ public class __BaseModule implements SwingActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void actionPerformed(ActionEvent arg0) 
+	{
+		useFrame().inspectEvent(arg0);		
 	}
 
 	@Override

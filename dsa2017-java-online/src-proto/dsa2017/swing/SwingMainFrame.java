@@ -1,8 +1,10 @@
 package dsa2017.swing;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.io.File;
 
+import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
@@ -48,4 +50,12 @@ public class SwingMainFrame extends JFrame
 //		System.out.println( d.getSelectedFile() );
 		lf.invokeAction(d.getSelectedFile());		
 	}
+	
+	public void showColorDialog(ColorAction lf)
+	{
+		Color c = JColorChooser.showDialog(this, "Choose color", Color.black);
+//		System.out.println( d.getSelectedFile() );
+		lf.invokeAction(c);		
+	}
+	
 }
