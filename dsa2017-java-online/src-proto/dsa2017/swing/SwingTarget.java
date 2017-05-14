@@ -5,6 +5,6 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SwingTarget {
 
-	Class<?> value();
+	Class<? extends SwingBaseModule> value();
 
 }

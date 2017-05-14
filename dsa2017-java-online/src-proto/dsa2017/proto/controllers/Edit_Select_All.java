@@ -1,9 +1,11 @@
 package dsa2017.proto.controllers;
 
+import java.awt.event.ActionEvent;
+
 public class Edit_Select_All extends __BaseModule 
 {
 	@Override
-	public void renderAction() 
+	public void actionPerformed(ActionEvent arg0) 
 	{
 		useFrame().selectMainView();		
 	}

@@ -1,11 +1,11 @@
 package dsa2017.swing;
 
-import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.lang.reflect.Field;
 
-public interface SwingBaseModule {
+import javax.swing.JMenuItem;
 
-	void setActionParams(ActionEvent x1, SwingActionListener x2);
-
-	void renderAction();
-
+public interface SwingBaseModule extends ActionListener 
+{
+	void setActionParams(JMenuItem mj, Class<? extends ActionListener> cj, Field fj);
 }
