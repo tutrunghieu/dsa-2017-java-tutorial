@@ -11,6 +11,13 @@ import dsa2017.proto.swing.SwingMainFrame;
 @SuppressWarnings("serial")
 public class ProtoAppMain extends SwingMainFrame 
 {
+	public static ProtoAppMain useFrame()
+	{
+		return __frame;
+	}
+	
+	private static ProtoAppMain __frame;
+	
 	protected ProtoMenuBar menuBar;
 	protected JTextArea mainView;
 	protected JScrollPane mainOuter;
@@ -51,10 +58,16 @@ public class ProtoAppMain extends SwingMainFrame
 		UIManager.put("MenuBar.border", BorderFactory.createCompoundBorder() );
 //		UIManager.put("MenuItem.border", BorderFactory.createLineBorder(Color.gray, 1));		
 		  
-		ProtoAppMain m = new ProtoAppMain();
+		__frame = new ProtoAppMain();
 
-		m.setVisible(true);
+		__frame.setVisible(true);
 
+	}
+
+
+	public void clearMainView() 
+	{
+		mainView.setText("");
 	}
 
 }

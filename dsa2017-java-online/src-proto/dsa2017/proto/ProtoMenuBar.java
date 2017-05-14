@@ -1,15 +1,14 @@
 package dsa2017.proto;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.lang.reflect.Field;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import dsa2017.proto.controllers.Edit_Clear;
+import dsa2017.proto.controllers.Edit_Select_All;
 import dsa2017.proto.controllers.File_New;
 import dsa2017.proto.controllers.File_Open;
 import dsa2017.proto.controllers.File_Save;
@@ -34,9 +33,14 @@ public class ProtoMenuBar extends SwingMenuBar
 	public JMenuItem menu_file_save;
 	
 	public JMenuItem menu_file_save_as;
+
 	public JMenuItem menu_help_about;
 	public JMenuItem menu_help_search;
+	
+	@SwingTarget(Edit_Clear.class)
 	public JMenuItem menu_edit_clear;
+	
+	@SwingTarget(Edit_Select_All.class)
 	public JMenuItem menu_edit_select_all;
 
 	public void createMenuBar(JFrame f) 
