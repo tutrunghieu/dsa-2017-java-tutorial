@@ -20,7 +20,6 @@ import dsa2017.swing.SwingActionMarker;
 public class ProtoMenuBar extends SwingMenuBar
 {
 	public JMenuBar menuBar;
-	
 	public JMenu menu_file;
 	public JMenu menu_edit;
 	public JMenu menu_help;
