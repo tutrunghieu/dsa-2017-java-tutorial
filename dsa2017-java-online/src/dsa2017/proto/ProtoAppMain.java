@@ -1,7 +1,5 @@
 package dsa2017.proto;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
 import javax.swing.BorderFactory;
@@ -11,11 +9,14 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
-public class ProtoAppMain extends JFrame {
+public class ProtoAppMain extends ProtoAppMain1970 
+{
+	private JTextArea mainView;
+	private JScrollPane mainOuter;
+	
 	private JMenuBar menuBar;
 	private JMenu menu_file;
 	private JMenu menu_edit;
@@ -24,10 +25,9 @@ public class ProtoAppMain extends JFrame {
 	private JMenuItem menu_file_open;
 	private JMenuItem menu_file_save;
 	private JMenuItem menu_file_save_as;
-	private JTextArea mainView;
-	private JScrollPane mainOuter;
 
-	public ProtoAppMain() {
+	public ProtoAppMain() 
+	{
 		this.setLocation(50, 50);
 		this.setSize(400, 700);
 		this.setTitle("Project 1");
@@ -57,22 +57,10 @@ public class ProtoAppMain extends JFrame {
 		menu_file.add(menu_file_save_as = new JMenuItem("Save as..."));
 	}
 
-	private JMenu newJMenu(String name, int key) 
-	{
-		JMenu res = new JMenu(name);
-		res.setMnemonic(key);
-		return res;
-	}
-	
-	private JMenuItem newJMenuItem(String name, int alt, int ctrl) 
-	{
-		JMenuItem res = new JMenuItem(name);		
-		res.setMnemonic(alt);
-		res.setAccelerator(KeyStroke.getKeyStroke(ctrl, ActionEvent.CTRL_MASK));		
-		return res;
-	}
 
-	private void createMainView() {
+
+	private void createMainView() 
+	{
 		this.add(mainOuter = new JScrollPane(mainView = new JTextArea()));
 
 		for (int k = 0; k < 1000; k++)
