@@ -6,10 +6,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
-import dsa2017.proto.swing.ProtoAppMain1970;
+import dsa2017.proto.swing.SwingMainFrame;
 
 @SuppressWarnings("serial")
-public class ProtoAppMain extends ProtoAppMain1970 
+public class ProtoAppMain extends SwingMainFrame 
 {
 	protected ProtoMenuBar menuBar;
 	protected JTextArea mainView;
@@ -25,6 +25,7 @@ public class ProtoAppMain extends ProtoAppMain1970
 
 		menuBar = new ProtoMenuBar();
 		menuBar.createMenuBar(this);
+		menuBar.bind();
 		
 		this.createMainView();
 	}

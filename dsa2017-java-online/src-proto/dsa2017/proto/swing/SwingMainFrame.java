@@ -10,7 +10,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-public class ProtoAppMain1970 extends JFrame 
+public class SwingMainFrame extends JFrame 
 {
 
 	public void message(String msg)
