@@ -19,6 +19,22 @@ import dsa2017.swing.SwingActionMarker;
 
 public class ProtoMenuBar extends SwingMenuBar
 {
+	public JMenu menu_order;
+	
+//	Order list:
+//		3.1.      Input data
+	@SwingActionMarker(File_New.class)
+	public JMenuItem menu_order_input;
+	
+	//		3.2.      Display data with total value
+	@SwingActionMarker(File_New.class)
+	public JMenuItem menu_order_display;
+	
+//		3.3.      Sort  by pcode and ccode
+	@SwingActionMarker(File_New.class)
+	public JMenuItem menu_order_sort;
+	
+	
 	public JMenuBar menuBar;
 	public JMenu menu_file;
 	public JMenu menu_edit;
@@ -67,6 +83,12 @@ public class ProtoMenuBar extends SwingMenuBar
 		
 		menu_help.add(menu_help_about = newJMenuItem("About", KeyEvent.VK_A, KeyEvent.VK_F1));
 		menu_help.add(menu_help_search = newJMenuItem("Search", KeyEvent.VK_S, KeyEvent.VK_F2));
+		
+		menuBar.add(menu_order = newJMenu("Order", KeyEvent.VK_O));
+		menu_order.add(menu_order_input = newJMenuItem("Input order", KeyEvent.VK_I, KeyEvent.VK_F1));
+		menu_order.add(menu_order_display = newJMenuItem("Display", KeyEvent.VK_D, KeyEvent.VK_F1));
+		menu_order.add(menu_order_sort = newJMenuItem("Sort", KeyEvent.VK_O, KeyEvent.VK_F1));
+		
 	}	
 	
 	
