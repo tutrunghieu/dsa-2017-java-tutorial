@@ -11,6 +11,8 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import dsa2017.swing.MouseClickListener;
+
 @SuppressWarnings("serial")
 public class BucketView extends JPanel implements MouseListener, KeyListener
 {
