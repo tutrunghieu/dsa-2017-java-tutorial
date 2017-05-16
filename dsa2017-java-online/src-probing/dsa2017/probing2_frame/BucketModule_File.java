@@ -26,9 +26,20 @@ public class BucketModule_File
 		}
 	}
 
-	public Object action_file_save(ActionEvent x) {
-		// TODO Auto-generated method stub
-		return null;
+	public void action_file_save(ActionEvent x) 
+	{
+		BucketFrame.useFrame().showSaveDialog(null, f -> saveFile(f));		
+	}
+
+	private void saveFile(File f)
+	{
+		try {
+			BufferedImage t = BucketFrame.useFrame().getMainView().getImage();
+			ImageIO.write(t, "png", f);
+		}
+		catch(Exception xp) {
+			xp.printStackTrace();
+		}
 	}
 
 }

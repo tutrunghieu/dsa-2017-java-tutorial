@@ -24,6 +24,11 @@ public class BucketView extends JPanel implements MouseListener, KeyListener
 		img = (BufferedImage)f;	
 	}    
 	
+	public BufferedImage getImage() 
+	{
+		return img;
+	}
+	
 	public void paintComponent(Graphics g)
     {
         if(img != null) g.drawImage(img, 0, 0, null);
@@ -81,5 +86,6 @@ public class BucketView extends JPanel implements MouseListener, KeyListener
 	{
 		clickListener = lf;		
 	}
+
 
 }
