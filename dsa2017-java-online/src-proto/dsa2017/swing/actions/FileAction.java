@@ -1,4 +1,4 @@
-package dsa2017.swing;
+package dsa2017.swing.actions;
 
 import java.io.File;
 

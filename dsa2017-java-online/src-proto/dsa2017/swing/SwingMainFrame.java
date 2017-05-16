@@ -10,6 +10,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import dsa2017.swing.actions.ColorAction;
+import dsa2017.swing.actions.FileAction;
+
 @SuppressWarnings("serial")
 public class SwingMainFrame extends JFrame 
 {
