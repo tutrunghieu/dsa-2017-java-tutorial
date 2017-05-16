@@ -20,12 +20,15 @@ public class BucketModule_Edit
 
 	public void action_edit_fill(MouseEvent x) 
 	{
-		System.out.println(x.getX() + ":" + x.getY());
+		System.out.println("inside " + x.getX() + ":" + x.getY());
 		
 		Color c = BucketFrame.useFrame().getCurrentColor();	
+		if(c == null) c = ImageService.nextColor();
+		
 		BufferedImage img = BucketFrame.useFrame().getMainView().getImage();
 
-		ImageService.floodFill(img, c, new Point(x.getX(), x.getY()));		
+		ImageService.floodFill(img, new Point(x.getX(), x.getY()), c);		
+		BucketFrame.useFrame().repaint();
 	}
 
 }

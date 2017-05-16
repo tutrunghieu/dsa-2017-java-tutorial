@@ -1,9 +1,6 @@
 package dsa2017.probing2_frame;
 
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -19,6 +16,11 @@ public class BucketView extends JPanel implements MouseListener, KeyListener
 {
     protected BufferedImage img;
 	private MouseClickListener clickListener;      
+	
+	public BucketView()
+	{
+		this.addMouseListener(this);
+	}
 
 	public void setImage(Object f) throws Exception
 	{
@@ -40,6 +42,7 @@ public class BucketView extends JPanel implements MouseListener, KeyListener
 	@Override
     public void mouseClicked(MouseEvent e)
     {		
+		System.out.println("main view " + e);
 		clickListener.actionPerformed(e);
     }
 
