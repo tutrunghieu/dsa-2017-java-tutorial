@@ -1,5 +1,6 @@
 package dsa2017.probing2_frame;
 
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
@@ -11,6 +12,7 @@ import javax.swing.JMenuItem;
 
 import dsa2017.proto.resources.__resources;
 import dsa2017.swing.SwingMainFrame;
+import dsa2017.swing.SwingMenuBar;
 import dsa2017.utils.Res;
 
 @SuppressWarnings("serial")
@@ -83,8 +85,9 @@ public class BucketFrame extends SwingMainFrame
 	private JMenu createMenuFile() 
 	{
 		JMenu res = new JMenu("File");
-		res.add(menu_file_open = new JMenuItem("Load"));
-		res.add(menu_file_save = new JMenuItem("Save"));
+		res.add(menu_file_open = SwingMenuBar.newJMenuItem("Load", KeyEvent.VK_L, KeyEvent.VK_L));
+
+		res.add(menu_file_save = SwingMenuBar.newJMenuItem("Save", KeyEvent.VK_S, KeyEvent.VK_S));
 		return res;
 	}
 	
