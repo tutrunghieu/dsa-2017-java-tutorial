@@ -1,10 +1,15 @@
 package dsa2017.probing2_frame;
 
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import dsa2017.proto.resources.__resources;
 import dsa2017.swing.SwingMainFrame;
 import dsa2017.utils.Res;
 
@@ -25,20 +30,24 @@ public class BucketFrame extends SwingMainFrame
 
 	private JMenuItem menu_edit_color;
 	private JMenuItem menu_edit_undo;
-	
+
 	
 	public BucketFrame() 
 	{
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		this.setLocation(50, 50);
 		this.setSize(800, 600);
 		this.setTitle("Bucket");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setIconImage(loadIcon());
 
 		this.add( mainView = createBucketView() );
 		this.setJMenuBar(menuBar = createMenuBar());
 		
 		this.bind();
 	}
+
+
 
 	private void bind() 
 	{

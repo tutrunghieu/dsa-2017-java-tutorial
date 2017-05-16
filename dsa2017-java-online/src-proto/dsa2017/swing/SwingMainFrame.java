@@ -2,21 +2,35 @@ package dsa2017.swing;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import dsa2017.proto.resources.__resources;
 import dsa2017.swing.actions.ColorAction;
 import dsa2017.swing.actions.FileAction;
 
 @SuppressWarnings("serial")
 public class SwingMainFrame extends JFrame 
 {
-
+	public BufferedImage loadIcon() 
+	{
+		try { 
+			BufferedImage t = ImageIO.read(__resources.class.getResourceAsStream("bucket.png"));
+			return t;
+		}
+		
+		catch(Exception xp) {
+			return null;
+		}
+	}
+	
 	public void message(String msg)
 	{
 		JOptionPane.showMessageDialog(this, msg);
