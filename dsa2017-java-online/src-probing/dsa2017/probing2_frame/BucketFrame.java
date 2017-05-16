@@ -1,16 +1,13 @@
 package dsa2017.probing2_frame;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import dsa2017.proto.resources.__resources;
 import dsa2017.swing.SwingMainFrame;
 import dsa2017.swing.SwingMenuBar;
 import dsa2017.utils.Res;
@@ -32,6 +29,8 @@ public class BucketFrame extends SwingMainFrame
 
 	private JMenuItem menu_edit_color;
 	private JMenuItem menu_edit_undo;
+
+	protected Color currentColor;
 
 	
 	public BucketFrame() 
@@ -119,6 +118,12 @@ public class BucketFrame extends SwingMainFrame
 
 	public BucketView getMainView() {
 		return mainView;
+	}
+
+
+	public Color getCurrentColor() 
+	{
+		return currentColor;
 	}
 
 }

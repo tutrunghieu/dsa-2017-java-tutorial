@@ -1,6 +1,8 @@
 package dsa2017.probing2_frame;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -23,6 +25,7 @@ public class BucketView extends JPanel implements MouseListener, KeyListener
 		if(f instanceof File) f = ImageIO.read((File)f);
 		img = (BufferedImage)f;	
 	}    
+	
 	
 	public BufferedImage getImage() 
 	{
@@ -86,6 +89,7 @@ public class BucketView extends JPanel implements MouseListener, KeyListener
 	{
 		clickListener = lf;		
 	}
+
 
 
 }
