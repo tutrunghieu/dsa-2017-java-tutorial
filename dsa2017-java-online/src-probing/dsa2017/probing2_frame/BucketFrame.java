@@ -42,7 +42,7 @@ public class BucketFrame extends SwingMainFrame
 		this.setSize(800, 600);
 		this.setTitle("Bucket");
 		this.setIconImage(loadIcon());
-
+		
 		this.add( mainView = createBucketView() );
 		this.setJMenuBar(menuBar = createMenuBar());
 		
@@ -53,6 +53,9 @@ public class BucketFrame extends SwingMainFrame
 
 	private void bind() 
 	{
+		moduleFile = new BucketModule_File();
+		moduleEdit = new BucketModule_Edit();
+		
 		menu_file_open.addActionListener(x -> moduleFile.action_file_open(x));
 		menu_file_save.addActionListener(x -> moduleFile.action_file_save(x));
 		
@@ -102,8 +105,20 @@ public class BucketFrame extends SwingMainFrame
 
 	public static void main(String[] args) 
 	{
-		BucketFrame f = new BucketFrame();
-		f.setVisible(true);
+		__frame = new BucketFrame();
+		__frame.setVisible(true);
+	}
+
+	private static BucketFrame __frame;
+
+	public static BucketFrame useFrame() 
+	{
+		return __frame;		
+	}
+
+
+	public BucketView getMainView() {
+		return mainView;
 	}
 
 }
