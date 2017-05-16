@@ -9,7 +9,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import dsa2017.swing.SwingMainFrame;
-import dsa2017.swing.SwingMenuBar;
 import dsa2017.swing.SwingUtils;
 import dsa2017.utils.Res;
 
