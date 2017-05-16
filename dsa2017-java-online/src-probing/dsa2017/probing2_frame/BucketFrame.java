@@ -10,17 +10,30 @@ import javax.swing.JMenuItem;
 
 import dsa2017.swing.SwingMainFrame;
 import dsa2017.swing.SwingMenuBar;
+import dsa2017.swing.SwingUtils;
 import dsa2017.utils.Res;
 
 @SuppressWarnings("serial")
 public class BucketFrame extends SwingMainFrame 
 {
-	protected BucketView mainView;
-	
-	protected BucketModule_File moduleFile;
-	protected BucketModule_Edit moduleEdit;
+	public static void main(String[] args) 
+	{
+		__frame = new BucketFrame();
+		__frame.setVisible(true);
+	}
 
-	protected JMenuBar menuBar;
+	public static BucketFrame useFrame() 
+	{
+		return (BucketFrame)__frame;		
+	}
+	
+	
+	protected BucketModule_File module_file;
+	protected BucketModule_Edit module_edit;
+	
+	protected BucketView main_view;
+
+	protected JMenuBar menu_bar;
 	protected JMenu menu_file;
 	protected JMenu menu_edit;
 
@@ -42,8 +55,11 @@ public class BucketFrame extends SwingMainFrame
 		this.setTitle("Bucket");
 		this.setIconImage(loadIcon());
 		
-		this.add( mainView = createBucketView() );
-		this.setJMenuBar(menuBar = createMenuBar());
+		this.add( main_view = createMainView() );
+		this.setJMenuBar(menu_bar = createMenuBar());
+		
+		module_file = new BucketModule_File();
+		module_edit = new BucketModule_Edit();
 		
 		this.bind();
 	}
@@ -52,19 +68,16 @@ public class BucketFrame extends SwingMainFrame
 
 	private void bind() 
 	{
-		moduleFile = new BucketModule_File();
-		moduleEdit = new BucketModule_Edit();
+		menu_file_open.addActionListener(x -> module_file.action_file_open(x));
+		menu_file_save.addActionListener(x -> module_file.action_file_save(x));
 		
-		menu_file_open.addActionListener(x -> moduleFile.action_file_open(x));
-		menu_file_save.addActionListener(x -> moduleFile.action_file_save(x));
+		menu_edit_color.addActionListener(x -> module_edit.action_edit_color(x));		
+		menu_edit_undo.addActionListener(x -> module_edit.action_edit_undo(x));		
 		
-		menu_edit_color.addActionListener(x -> moduleEdit.action_edit_color(x));		
-		menu_edit_undo.addActionListener(x -> moduleEdit.action_edit_undo(x));		
-		
-		mainView.addMouseClickListener(x -> moduleEdit.action_edit_fill(x));
+		main_view.addMouseListener( SwingUtils.newMouseClickListener(x -> module_edit.action_edit_fill(x)) );
 	}
 
-	private BucketView createBucketView() 
+	private BucketView createMainView() 
 	{
 		BucketView res = new BucketView();
 		
@@ -87,9 +100,9 @@ public class BucketFrame extends SwingMainFrame
 	private JMenu createMenuFile() 
 	{
 		JMenu res = new JMenu("File");
-		res.add(menu_file_open = SwingMenuBar.newJMenuItem("Load", KeyEvent.VK_L, KeyEvent.VK_L));
+		res.add(menu_file_open = SwingUtils.newJMenuItem("Load", KeyEvent.VK_L, KeyEvent.VK_L));
 
-		res.add(menu_file_save = SwingMenuBar.newJMenuItem("Save", KeyEvent.VK_S, KeyEvent.VK_S));
+		res.add(menu_file_save = SwingUtils.newJMenuItem("Save", KeyEvent.VK_S, KeyEvent.VK_S));
 		return res;
 	}
 	
@@ -102,22 +115,10 @@ public class BucketFrame extends SwingMainFrame
 	}
 
 
-	public static void main(String[] args) 
-	{
-		__frame = new BucketFrame();
-		__frame.setVisible(true);
-	}
 
-	private static BucketFrame __frame;
-
-	public static BucketFrame useFrame() 
-	{
-		return __frame;		
-	}
-
-
+	
 	public BucketView getMainView() {
-		return mainView;
+		return main_view;
 	}
 
 
