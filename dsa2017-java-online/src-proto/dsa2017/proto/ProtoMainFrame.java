@@ -2,13 +2,11 @@ package dsa2017.proto;
 
 import java.awt.event.KeyEvent;
 
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.UIManager;
 
 import dsa2017.proto.controllers.Module_Edit;
 import dsa2017.proto.controllers.Module_File;
@@ -19,31 +17,6 @@ import dsa2017.swing.SwingMenuBar;
 @SuppressWarnings("serial")
 public class ProtoMainFrame  extends SwingMainFrame
 {
-	private static ProtoMainFrame __frame;
-	
-	public static ProtoMainFrame useFrame()
-	{
-		return __frame;
-	}
-	
-	public static void main(String[] args) throws Exception 
-	{
-//		UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-//		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-//		UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");	
-		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		
-//		UIManager.put("Menu.border", BorderFactory.createLineBorder(Color.gray, 1));
-		UIManager.put("MenuBar.border", BorderFactory.createCompoundBorder() );
-//		UIManager.put("MenuItem.border", BorderFactory.createLineBorder(Color.gray, 1));		
-		  
-		__frame = new ProtoMainFrame();
-
-		__frame.setVisible(true);
-
-	}
-	
-	
 	protected JMenuBar menuBar;
 	protected JMenu menu_file;
 	protected JMenu menu_edit;
