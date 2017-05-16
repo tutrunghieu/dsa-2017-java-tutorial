@@ -31,7 +31,6 @@ public class ProtoMainFrame  extends SwingMainFrame
 		this.setSize(400, 700);
 		this.setTitle("Swing Sample");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 		
 		this.createMenuBar();
 		this.createMainView();
@@ -55,8 +54,6 @@ public class ProtoMainFrame  extends SwingMainFrame
 		for (int k = 0; k < 1000; k++)
 			mainView.append("Line " + k + "\r\n");
 	}
-
-
 
 	public void clearMainView() 
 	{
