@@ -7,13 +7,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-import dsa2017.proto.ProtoMenuBar;
-
 public class SwingMenuBar 
 {
 	public void bind() 
 	{
-		for(Field fj: ProtoMenuBar.class.getFields())
+		for(Field fj: this.getClass().getFields())
 		try
 		{
 			SwingActionMarker tj = fj.getAnnotation(SwingActionMarker.class);
@@ -38,14 +36,15 @@ public class SwingMenuBar
 	}
 
 	
-	protected JMenu newJMenu(String name, int key) 
+	public static JMenu newJMenu(String name, int key, SwingMenuProvider b) 
 	{
 		JMenu res = new JMenu(name);
 		res.setMnemonic(key);
+		b.addMenu(res);
 		return res;
 	}
 	
-	protected JMenuItem newJMenuItem(String name, int alt, int ctrl) 
+	public static JMenuItem newJMenuItem(String name, int alt, int ctrl) 
 	{
 		JMenuItem res = new JMenuItem(name);		
 		res.setMnemonic(alt);
