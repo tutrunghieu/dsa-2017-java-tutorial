@@ -5,7 +5,7 @@ package dsa2017.proto.physical;
 //2.	cus_name (string): the name of the customer.
 //3.	phone (string): The phone number of the customer (must contain digits only).
 
-public class tab_customer {
+public class Tab_Customer {
 	public String ccode;
 	public String cus_name;
 	public String phone;
