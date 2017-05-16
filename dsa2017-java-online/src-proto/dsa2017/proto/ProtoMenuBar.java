@@ -34,6 +34,12 @@ public class ProtoMenuBar
 	public JMenuItem menu_help_about;
 	public JMenuItem menu_help_search;
 	
+	public ProtoMenuBar(JFrame f) 
+	{
+		addMenuBar(f);
+	}
+
+
 	public void addMenuBar(JFrame f) 
 	{
 		f.setJMenuBar(menuBar = new JMenuBar());		

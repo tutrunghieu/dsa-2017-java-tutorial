@@ -5,20 +5,20 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import dsa2017.probing2_frame.PictureBox;
+import dsa2017.probing2_frame.BucketView;
 
 @SuppressWarnings("serial")
 public class BeforeAfterView extends JPanel 
 {
-	private PictureBox leftView;
-	private PictureBox rightView;
+	private BucketView leftView;
+	private BucketView rightView;
 	private JFrame parentFrame;
 
 	public BeforeAfterView()
 	{
 		this.setLayout(new GridLayout(1, 2));
-		this.add(leftView = new PictureBox());
-		this.add(rightView = new PictureBox());
+		this.add(leftView = new BucketView());
+		this.add(rightView = new BucketView());
 	}
 
 	public void setBefore(Object f) 

@@ -1,6 +1,7 @@
 package dsa2017.probing2_frame;
 
 import java.awt.Graphics;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -12,9 +13,10 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class PictureBox extends JPanel implements MouseListener, KeyListener
+public class BucketView extends JPanel implements MouseListener, KeyListener
 {
-    protected BufferedImage img;      
+    protected BufferedImage img;
+	private MouseClickListener clickListener;      
 
 	public void setImage(Object f) throws Exception
 	{
@@ -30,8 +32,7 @@ public class PictureBox extends JPanel implements MouseListener, KeyListener
 	@Override
     public void mouseClicked(MouseEvent e)
     {		
-		int x = e.getX();
-		int y = e.getY();
+		clickListener.actionPerformed(e);
     }
 
 	@Override
@@ -74,6 +75,11 @@ public class PictureBox extends JPanel implements MouseListener, KeyListener
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void addMouseClickListener(MouseClickListener lf) 
+	{
+		clickListener = lf;		
 	}
 
 }
