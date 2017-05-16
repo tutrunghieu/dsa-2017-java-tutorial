@@ -1,27 +1,15 @@
 package dsa2017.proto;
 
-import java.awt.event.KeyEvent;
-
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import dsa2017.proto.controllers.Module_Edit;
-import dsa2017.proto.controllers.Module_File;
-import dsa2017.proto.controllers.Module_Help;
 import dsa2017.swing.SwingMainFrame;
-import dsa2017.swing.SwingMenuBar;
 
 @SuppressWarnings("serial")
 public class ProtoMainFrame  extends SwingMainFrame
 {
-	protected JMenuBar menuBar;
-	protected JMenu menu_file;
-	protected JMenu menu_edit;
-	protected JMenu menu_help;
-	
+	protected ProtoMenuBar menuBar;
 	protected JTextArea mainView;
 	protected JScrollPane mainOuter;
 
@@ -32,20 +20,10 @@ public class ProtoMainFrame  extends SwingMainFrame
 		this.setTitle("Swing Sample");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.createMenuBar();
+		menuBar = new ProtoMenuBar();
+		menuBar.addMenuBar(this);
 		this.createMainView();
 	}
-
-	
-	private void createMenuBar() 
-	{
-		this.setJMenuBar(menuBar = new JMenuBar());
-		
-		menuBar.add(menu_file = SwingMenuBar.newJMenu("File", KeyEvent.VK_F, new Module_File()));
-		menuBar.add(menu_edit = SwingMenuBar.newJMenu("Edit", KeyEvent.VK_E, new Module_Edit()));
-		menuBar.add(menu_help = SwingMenuBar.newJMenu("Help", KeyEvent.VK_H, new Module_Help()));
-	}
-
 
 	private void createMainView() 
 	{

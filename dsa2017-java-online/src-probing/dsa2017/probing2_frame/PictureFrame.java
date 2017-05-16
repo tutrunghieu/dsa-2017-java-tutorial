@@ -1,4 +1,4 @@
-package dsa2017.swing.frames;
+package dsa2017.probing2_frame;
 
 import javax.swing.JFrame;
 
@@ -8,7 +8,7 @@ import dsa2017.utils.Res;
 @SuppressWarnings("serial")
 public class PictureFrame extends SwingMainFrame 
 {
-	protected MyCanvas mainView;
+	protected PictureBox mainView;
 	
 	public PictureFrame() 
 	{
@@ -17,7 +17,7 @@ public class PictureFrame extends SwingMainFrame
 		this.setTitle("Before/After");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		this.add( mainView = new MyCanvas() );
+		this.add( mainView = new PictureBox() );
 		
 		try { mainView.setImage(Res.getDesktopFile("input.png")); }
 		catch(Exception xp) { xp.printStackTrace(); }

@@ -5,18 +5,20 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import dsa2017.probing2_frame.PictureBox;
+
 @SuppressWarnings("serial")
 public class BeforeAfterView extends JPanel 
 {
-	private MyCanvas leftView;
-	private MyCanvas rightView;
+	private PictureBox leftView;
+	private PictureBox rightView;
 	private JFrame parentFrame;
 
 	public BeforeAfterView()
 	{
 		this.setLayout(new GridLayout(1, 2));
-		this.add(leftView = new MyCanvas());
-		this.add(rightView = new MyCanvas());
+		this.add(leftView = new PictureBox());
+		this.add(rightView = new PictureBox());
 	}
 
 	public void setBefore(Object f) 

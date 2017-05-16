@@ -36,11 +36,10 @@ public class SwingMenuBar
 	}
 
 	
-	public static JMenu newJMenu(String name, int key, SwingMenuProvider b) 
+	public static JMenu newJMenu(String name, int key) 
 	{
 		JMenu res = new JMenu(name);
 		res.setMnemonic(key);
-		b.addMenu(res);
 		return res;
 	}
 	
