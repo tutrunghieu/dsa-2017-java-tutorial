@@ -5,3 +5,12 @@ If we have many actions to the same class, we need the switcher
 -- ProtoAppMain creates ProtoMainFrame
 ----- ProtoMainFrame creates ProtoMenuBar
 ----------- ProtoMenuBar creates Action Objects
+
+
+
+>> on main
+>> >> create frame
+>> >> >> create module
+
+>> on select menu item
+>> >> select module & function
