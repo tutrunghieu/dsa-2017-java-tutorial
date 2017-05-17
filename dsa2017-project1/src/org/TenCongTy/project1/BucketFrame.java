@@ -1,4 +1,4 @@
-package dsa2017.probing2_frame;
+package org.TenCongTy.project1;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -8,9 +8,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import dsa2017.swing.SwingMainFrame;
-import dsa2017.swing.SwingUtils;
-import dsa2017.utils.Res;
+import org.DungChung.SwingMainFrame;
+import org.DungChung.SwingUtils;
 
 @SuppressWarnings("serial")
 public class BucketFrame extends SwingMainFrame 
@@ -85,8 +84,8 @@ public class BucketFrame extends SwingMainFrame
 	{
 		BucketView res = new BucketView();
 		
-		try { res.setImage(Res.getDesktopFile("input.png")); }
-		catch(Exception xp) { xp.printStackTrace(); }
+//		try { res.setImage(Res.getDesktopFile("input.png")); }
+//		catch(Exception xp) { xp.printStackTrace(); }
 
 		return res;
 	}
