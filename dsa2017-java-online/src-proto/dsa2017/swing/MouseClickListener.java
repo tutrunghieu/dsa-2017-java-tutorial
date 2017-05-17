@@ -1,4 +1,4 @@
-package dsa2017.probing2_frame;
+package dsa2017.swing;
 
 import java.awt.event.MouseEvent;
 

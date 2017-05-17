@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import dsa2017.probing2_frame.BucketFrame;
 import dsa2017.proto.resources.__resources;
 import dsa2017.swing.actions.ColorAction;
 import dsa2017.swing.actions.FileAction;
@@ -19,6 +20,14 @@ import dsa2017.swing.actions.FileAction;
 @SuppressWarnings("serial")
 public class SwingMainFrame extends JFrame 
 {
+	protected static SwingMainFrame __frame;
+
+	public static SwingMainFrame useFrame() 
+	{
+		return __frame;		
+	}
+
+	
 	public BufferedImage loadIcon() 
 	{
 		try { 
