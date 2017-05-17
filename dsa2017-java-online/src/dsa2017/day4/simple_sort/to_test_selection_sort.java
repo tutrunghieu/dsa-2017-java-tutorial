@@ -9,16 +9,16 @@ public class to_test_selection_sort {
 	public static void main(String[] args)
 	{
 		List<Integer> L = new ArrayList<Integer>(
-				Arrays.asList(10, 7, 3, 8, 2, 4, 6, 9, 1, 5)); 
+				Arrays.asList(9, 10, 11, 8, 12, 5)); 
 
 		System.out.println("before: " + L);
 		selectionSort(L);
-		//System.out.println("after: " + L);
+		System.out.println("after: " + L);
 	}
 
 	private static void selectionSort(List<Integer> L) 
 	{
-		for(int h=0; h<L.size(); h++) 
+		for(int h=0; h<L.size()-1; h++) 
 		{
 			int m = maxIndex(L, h);
 			System.out.println("L("+m+")=" + L.get(m));
