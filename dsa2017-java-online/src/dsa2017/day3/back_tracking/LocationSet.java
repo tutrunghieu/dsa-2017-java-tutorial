@@ -8,25 +8,40 @@ public class LocationSet
 	private boolean[] dim_p;
 	private boolean[] dim_m;
 
-	public LocationSet(int[] cols) 
+	public LocationSet(int n) 
 	{
-		int n = counter = cols.length;
+		counter = n;
+		
+		dim_r = new boolean[n];
+		dim_c = new boolean[n];
+		dim_p = new boolean[2*n];
+		dim_m = new boolean[2*n];
+	}
+	
+	public LocationSet(int[] conf) 
+	{
+		int n = conf.length;
+		counter = n;
 		
 		dim_r = new boolean[n];
 		dim_c = new boolean[n];
 		dim_p = new boolean[2*n];
 		dim_m = new boolean[2*n];
 		
-		for(int c=0; c<n; c++)  
+		for(int c=0; c<conf.length; c++) 
 		{
-			int r = cols[c];
-			if(r >=0 )place(r, c);
+			int r = conf[c];
+			if(r >= 0) place(r, c);
 		}
-		
-		return;
 	}
 
-	private void place(int r, int c) 
+	public int size() 
+	{
+		return counter;
+	}
+
+
+	public void place(int r, int c) 
 	{
 		dim_r[r] = true;
 		dim_c[c] = true;
@@ -34,10 +49,14 @@ public class LocationSet
 		dim_m[r-c+counter] = true;
 	}
 
-	public int size() 
+	public void clear(int r, int c) 
 	{
-		return counter;
+		dim_r[r] = false;
+		dim_c[c] = false;
+		dim_p[r+c] = false;
+		dim_m[r-c+counter] = false;
 	}
+	
 
 	public boolean avail(int r, int c) 
 	{
@@ -53,7 +72,8 @@ public class LocationSet
 			for(int c=0; c<n; c++) System.out.print(avail(r, c) ? "." : "x");
 			System.out.println("");			
 		}
-		
 	}
+
+
 
 }
