@@ -1,4 +1,4 @@
-package org.DungChung;
+package org.services;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -12,9 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import org.DungChung.actions.ColorAction;
-import org.DungChung.actions.FileAction;
-import org.TenCongTy.project1.resources.__resources;
+import org.CompanyName.project1.resources.__resources;
+import org.services.actions.ColorAction;
+import org.services.actions.FileAction;
 
 @SuppressWarnings("serial")
 public class SwingMainFrame extends JFrame 

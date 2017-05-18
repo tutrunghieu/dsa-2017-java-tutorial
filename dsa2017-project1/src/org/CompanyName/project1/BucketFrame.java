@@ -1,4 +1,4 @@
-package org.TenCongTy.project1;
+package org.CompanyName.project1;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -8,8 +8,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import org.DungChung.SwingMainFrame;
-import org.DungChung.SwingUtils;
+import org.services.SwingMainFrame;
+import org.services.SwingUtils;
 
 @SuppressWarnings("serial")
 public class BucketFrame extends SwingMainFrame 

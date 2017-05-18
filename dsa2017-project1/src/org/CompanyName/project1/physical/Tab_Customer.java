@@ -1,4 +1,4 @@
-package org.TenCongTy.project1.physical;
+package org.CompanyName.project1.physical;
 
 //About a customer:
 //1.	ccode (string): the code of the customer (this should be unique for the customer).

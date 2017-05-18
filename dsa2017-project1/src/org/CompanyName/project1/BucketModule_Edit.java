@@ -1,4 +1,4 @@
-package org.TenCongTy.project1;
+package org.CompanyName.project1;
 
 import java.awt.Color;
 import java.awt.Point;

@@ -1,4 +1,4 @@
-package org.TenCongTy.project1;
+package org.CompanyName.project1;
 
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;

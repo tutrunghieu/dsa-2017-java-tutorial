@@ -1,4 +1,4 @@
-package org.TenCongTy.project1.physical;
+package org.CompanyName.project1.physical;
 
 //About a product:
 //1.	pcode (string): the code of the product (this should be unique for the product).
