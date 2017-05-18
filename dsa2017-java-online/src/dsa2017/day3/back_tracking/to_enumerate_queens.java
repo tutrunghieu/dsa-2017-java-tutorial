@@ -17,11 +17,11 @@ public class to_enumerate_queens {
 
 	private static void enumerate(int c, int[] conf) 
 	{
-		LocationSet set = new LocationSet(conf);
+		LocationSet board = new LocationSet(conf);
 		//set.dump();
 		
-		for(int r=0; r<set.size(); r++)
-		if(set.avail(r, c))
+		for(int r=0; r<board.size(); r++)
+		if(board.avail(r, c))
 		{
 			// System.out.println("Putting " + c + " at row " + r);
 			conf[c] = r;
