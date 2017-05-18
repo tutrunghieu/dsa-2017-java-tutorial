@@ -7,9 +7,25 @@ public class to_divide_image {
 
 	public static void main(String[] args) 
 	{
-		BufferedImage img = new BufferedImage(3, 3, BufferedImage.TYPE_INT_ARGB);
+		BufferedImage img = genImage(5);
 		
-		GaussianRect s = sum(img, 0, 0, img.getWidth(), img.getHeight());
+		GaussianRect s = sum(img, 0, 0, img.getWidth()-1, img.getHeight()-1);
+		System.out.println(s);
+	}
+
+	private static BufferedImage genImage(int n) 
+	{
+		BufferedImage res = new BufferedImage(n, n, BufferedImage.TYPE_INT_ARGB);
+		
+		for(int x=0; x<n; x++)
+		for(int y=0; y<n; y++)
+		{
+			int t = (int)Math.floor(256 * Math.random());
+			Color c = new Color(0, 0, t);
+			res.setRGB(x, y, c.getRGB());
+		}
+		
+		return res;
 	}
 
 	private static GaussianRect sum(BufferedImage img, int x1, int y1, int x2, int y2) 
@@ -52,9 +68,9 @@ public class to_divide_image {
 		
 		int n = res.counter;
 		
-		res.varRed = r / n;
-		res.varGreen = g / n;
-		res.varBlue = b / n;
+		res.varRed = Math.sqrt(r / n);
+		res.varGreen = Math.sqrt(g / n);
+		res.varBlue = Math.sqrt(b / n);
 
 		return res;
 	}
