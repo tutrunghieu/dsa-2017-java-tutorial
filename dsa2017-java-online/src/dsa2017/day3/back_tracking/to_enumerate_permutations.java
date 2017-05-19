@@ -1,6 +1,7 @@
 package dsa2017.day3.back_tracking;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -8,7 +9,10 @@ public class to_enumerate_permutations {
 
 	public static void main(String[] args) 
 	{
-		Set<String> avail = new LinkedHashSet<String>(Arrays.asList("Amy", "Frank", "Dave", "Lucas"));
+		Set<String> avail = new HashSet<String>(
+				Arrays.asList(
+						"Amy", "Frank", "Dave"));
+		
 		enumerate(avail);
 	}
 	
@@ -18,7 +22,8 @@ public class to_enumerate_permutations {
 		enumerate(0, conf, avail);		
 	}
 
-	private static void enumerate(int n, String[] conf, Set<String> avail) 
+	private static void enumerate(int n, String[] conf, 
+			Set<String> avail) 
 	{
 		for(String ak: avail) 
 		{

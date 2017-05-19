@@ -4,7 +4,7 @@ public class to_enumerate_queens_minimal
 {
 	public static void main(String[] args) 
 	{
-		enumerateAll(4);
+		enumerateAll(8);
 	}
 	
 	private static LocationSet board;
@@ -18,7 +18,8 @@ public class to_enumerate_queens_minimal
 		enumerateAtCol(0, conf);		
 	}
 
-	private static void enumerateAtCol(int c, int[] conf) 
+	private static void enumerateAtCol(
+			int c, int[] conf) 
 	{
 		for(int r=0; r<board.size(); r++)
 		if(board.avail(r, c))
