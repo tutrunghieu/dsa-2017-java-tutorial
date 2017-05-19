@@ -1,24 +1,54 @@
 package org.tests.readfiles;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.CompanyName.project1.physical.Tab_Customer;
 import org.codehaus.jackson.map.ObjectMapper;
 
 public class to_read_customer_file {
 
 	//xem huong dan tai
 	// https://docs.google.com/document/d/1jG4vWu3Bf-WjjAnQSlR7eAoMjxVMPhrh1Xycv1fihRc/edit?usp=sharing
-	public static void main(String[] args)
-	throws Exception
+	public static void main(String[] args) throws Exception
 	{
 		File f = getDesktopFile("dsa2017-data/1e2/customers.json");
 		
-		ObjectMapper m = new ObjectMapper();
-		List<Object> kq = (List<Object>)m.readValue(f, Object.class);
-		for(Object x: kq)
-			System.out.println(x);
+		List<Tab_Customer> kq = readList(f, Tab_Customer.class);
+		for(Tab_Customer x: kq) System.out.println(x.cus_name);
 	}
+	
+	@SuppressWarnings("unchecked")
+	protected static<T1> List<T1> readList(File f, Class<T1> cl) throws Exception
+	{
+		List<T1> items = new ArrayList<T1>();
+		
+		for(Object s: readList(f))
+		{
+			Map<String, Object> sjj = (Map<String, Object>)s;
+			T1 tjj = cl.newInstance();
+			for(String k: sjj.keySet()) 
+			{
+				Object vk = sjj.get(k);
+				cl.getField(k).set(tjj, vk);
+			}
+			
+			items.add(tjj);
+		}
+		
+		return items;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private static List<Object> readList(File f) throws Exception
+	{
+		ObjectMapper m = new ObjectMapper();
+		return (List<Object>)m.readValue(f, Object.class);
+	}
+
+
 
 	public static File getDesktopFile(String name)
 	{
