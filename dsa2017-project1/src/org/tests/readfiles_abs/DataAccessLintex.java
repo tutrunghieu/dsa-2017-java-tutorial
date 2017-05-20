@@ -11,15 +11,17 @@ public class DataAccessLintex extends DataAccess {
 	}
 
 	@Override
-	public <T1> List<T1> readList(Class<T1> cl) {
+	public List<Object> readList(File f) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <T1> void writeList(List<T1> items) {
+	public <T1> void writeList(List<T1> items, Class<T1> cl) {
 		// TODO Auto-generated method stub
-
+		
 	}
+
+
 
 }
