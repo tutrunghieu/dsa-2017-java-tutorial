@@ -1,0 +1,54 @@
+
+!!! ------ list, stack, queue, priority
+Wednesday 10/05/2017
+Wednesday 10/05/2017
+Friday 12/05/2017
+Friday 12/05/2017
+
+------ recursive, sort1, sort2
+Monday 15/05/2017
+Monday 15/05/2017
+Wednesday 17/05/2017	 
+Wednesday 17/05/2017	 
+Friday 19/05/2017	 
+Friday 19/05/2017	 
+
+------ tree1, tree2, tree3
+Monday 22/05/2017	 
+Monday 22/05/2017	 
+Wednesday 24/05/2017	 
+Wednesday 24/05/2017	 
+Friday 26/05/2017	 
+Friday 26/05/2017	 
+
+------ string1, string2, review1
+Monday 29/05/2017	 
+Monday 29/05/2017	 
+Wednesday 31/05/2017	 
+Wednesday 31/05/2017	 
+Friday 02/06/2017	 
+Friday 02/06/2017	 
+
+------- graph1, graph2, review2
+Monday 05/06/2017	 
+Monday 05/06/2017	 
+Wednesday 07/06/2017	 
+Wednesday 07/06/2017	 
+Friday 09/06/2017	 
+Friday 09/06/2017	 
+
+------- gradle, lucene, GUI/swing  
+Monday 12/06/2017	 
+Monday 12/06/2017	 
+Wednesday 14/06/2017	 
+Wednesday 14/06/2017	 
+Friday 16/06/2017	 
+Friday 16/06/2017	 
+
+------- feedback
+Monday 26/06/2017	 
+Monday 26/06/2017	 
+Wednesday 28/06/2017	 
+Wednesday 28/06/2017	 
+Friday 30/06/2017	 
+Friday 30/06/2017	 
