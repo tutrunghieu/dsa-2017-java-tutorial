@@ -8,7 +8,7 @@ import java.util.Map;
 import org.CompanyName.project1.physical.Tab_Customer;
 import org.codehaus.jackson.map.ObjectMapper;
 
-public class to_read_customer_file 
+public class to_read_customer_from_json 
 {
 
 	//xem huong dan tai
