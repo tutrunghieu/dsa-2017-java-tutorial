@@ -2,6 +2,9 @@ package org.tests.readfiles;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -24,8 +27,57 @@ public class to_read_customer_from_xlsx
 		
 		List<Tab_Customer> kq = readList(f, Tab_Customer.class);
 		for(Tab_Customer x: kq) System.out.println(x.cus_name);
+		
+		f = Res.getDesktopFile("test1.xlsx");
+		writeList(kq.subList(0, 5), f);		
 	}
 	
+	public static<T1> void writeList(List<T1> items, File f) throws Exception
+	{
+		XSSFWorkbook book = new XSSFWorkbook();
+		XSSFSheet s = book.createSheet("Sheet 1");
+		
+		List<Field> fields = null;
+		int r = 0;
+		for(T1 ik: items)
+		{
+			if(r == 0) fields = writeXlsxHeader(ik, s.createRow(r++));
+			writeXlsxData(ik, s.createRow(r++), fields);			
+		}
+		
+		FileOutputStream out = new FileOutputStream(f);
+		book.write(out);
+		out.close();
+	}
+
+	private static<T1> List<Field> writeXlsxHeader(T1 ik, XSSFRow r) 
+	{
+		List<Field> res = new ArrayList<Field>();
+		
+		for(Field fj: ik.getClass().getFields())
+			if( Modifier.isPublic(fj.getModifiers()))
+				res.add(fj);
+		
+		int k = 0;
+		for(Field fj: res) 
+		{
+			XSSFCell ck = r.createCell(k++);
+			ck.setCellValue(fj.getName());
+		}
+		
+		return res;
+	}
+	
+	private static<T1> void writeXlsxData(T1 ik, XSSFRow r, List<Field> fields) throws Exception 
+	{
+		int k = 0;
+		for(Field fj: fields) 
+		{
+			XSSFCell ck = r.createCell(k++);
+			ck.setCellValue(fj.get(ik) + "");
+		}
+	}
+
 	@SuppressWarnings("unchecked")
 	protected static<T1> List<T1> readList(File f, Class<T1> cl) throws Exception
 	{

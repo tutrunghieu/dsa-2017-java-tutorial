@@ -19,8 +19,13 @@ public class to_read_customer_from_json
 		
 		List<Tab_Customer> kq = readList(f, Tab_Customer.class);
 		for(Tab_Customer x: kq) System.out.println(x.cus_name);
+		
+		f = Res.getDesktopFile("test1.json");
+		writeList(f, kq.subList(0, 5));
 	}
 	
+
+
 	@SuppressWarnings("unchecked")
 	protected static<T1> List<T1> readList(File f, Class<T1> cl) throws Exception
 	{
@@ -40,6 +45,12 @@ public class to_read_customer_from_json
 		}
 		
 		return items;
+	}
+	
+	private static<T1> void writeList(File f, List<T1> items) throws Exception 
+	{
+		ObjectMapper m = new ObjectMapper();
+		m.writeValue(f, items);				
 	}
 	
 	@SuppressWarnings("unchecked")
