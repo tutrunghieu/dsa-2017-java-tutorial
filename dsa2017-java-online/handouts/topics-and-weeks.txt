@@ -1,17 +1,17 @@
 
-!!! ------ list, stack, queue, priority
-Wednesday 10/05/2017
-Wednesday 10/05/2017
-Friday 12/05/2017
-Friday 12/05/2017
+//------ list, stack, queue, priority
+//Wednesday 10/05/2017
+//Wednesday 10/05/2017
+//Friday 12/05/2017
+//Friday 12/05/2017
 
------- recursive, sort1, sort2
-Monday 15/05/2017
-Monday 15/05/2017
-Wednesday 17/05/2017	 
-Wednesday 17/05/2017	 
-Friday 19/05/2017	 
-Friday 19/05/2017	 
+//------ recursive, sort1, sort2
+//Monday 15/05/2017
+//Monday 15/05/2017
+//Wednesday 17/05/2017	 
+//Wednesday 17/05/2017	 
+//Friday 19/05/2017	 
+//Friday 19/05/2017	 
 
 ------ tree1, tree2, tree3
 Monday 22/05/2017	 
