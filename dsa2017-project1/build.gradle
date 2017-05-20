@@ -34,8 +34,7 @@ dependencies
 	//dung de doc pdf
 	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.9'
 	
-	//doc excel
-	compile group: 'org.apache.poi', name: 'poi-scratchpad', version: '3.2-FINAL'
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
 		
 }
 
