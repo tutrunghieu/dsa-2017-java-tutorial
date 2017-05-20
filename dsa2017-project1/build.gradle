@@ -1,8 +1,6 @@
 buildscript {
 	repositories {
 		mavenCentral()
-		maven { url "https://repo.spring.io/snapshot" }
-		maven { url "https://repo.spring.io/milestone" }
 	}
 	dependencies {
 	}
@@ -15,14 +13,13 @@ jar {
 	baseName = 'project1'
 	version = '0.0.1-SNAPSHOT'
 }
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
 	mavenLocal()
 	mavenCentral()
-	maven { url "https://repo.spring.io/snapshot" }
-	maven { url "https://repo.spring.io/milestone" }
 }
 
 
@@ -35,7 +32,11 @@ dependencies
 	compile 'org.jsoup:jsoup:1.10.1'
 	
 	//dung de doc pdf
-	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.9'	
+	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.9'
+	
+	//doc excel
+	compile group: 'org.apache.poi', name: 'poi-scratchpad', version: '3.2-FINAL'
+		
 }
 
 
