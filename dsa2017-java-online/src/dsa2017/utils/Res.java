@@ -8,4 +8,10 @@ public class Res {
 	{
 		return new File(System.getProperty("user.home") + "/Desktop/" + name);
 	}
+
+	public static int code(Object src) 
+	{
+		if(src == null) return 0;
+		return src.hashCode();
+	}
 }
