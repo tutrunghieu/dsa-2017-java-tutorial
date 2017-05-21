@@ -22,4 +22,12 @@ public class BinaryNode {
 		info = d;		
 	}
 
+	public int getLevel()
+	{
+		int cnt = 0;
+		BinaryNode c = this;
+		while(c != null) { cnt++; c = c.parent; } 
+		return cnt;
+	}
+
 }

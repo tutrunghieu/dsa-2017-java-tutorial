@@ -10,7 +10,7 @@ public class GenTreeNode
 {
 	@Override
 	public String toString() {
-		return "GenTreeNode [data=" + data
+		return "GenTreeNode#"+this.hashCode()+" [data=" + data
 				+ ", parent=" + Res.code(parent)
 				+ ", children=" + Res.codeList(children) + "]";
 	}
