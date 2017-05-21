@@ -1,6 +1,9 @@
 package dsa2017.utils;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class Res {
 
@@ -13,5 +16,12 @@ public class Res {
 	{
 		if(src == null) return 0;
 		return src.hashCode();
+	}
+
+	public static<T1> List<Integer> codeList(Collection<T1> c) 
+	{
+		List<Integer> res = new ArrayList<Integer>();
+		for(T1 ck: c) res.add(ck.hashCode());
+		return res;
 	}
 }
