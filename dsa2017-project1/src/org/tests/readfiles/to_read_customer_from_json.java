@@ -16,9 +16,13 @@ public class to_read_customer_from_json
 	public static void main(String[] args) throws Exception
 	{
 		File f = Res.getDesktopFile("dsa2017-data/1e2/customers.json");
-		
+
+//		List<Object> kq = readList(f);
+//		for(Object x: kq) System.out.println(x);
+	
 		List<Tab_Customer> kq = readList(f, Tab_Customer.class);
-		for(Tab_Customer x: kq) System.out.println(x.cus_name);
+		for(Tab_Customer x: kq)
+			System.out.println(x.cus_name + " | " + x.phone);
 		
 		f = Res.getDesktopFile("test1.json");
 		writeList(f, kq.subList(0, 5));

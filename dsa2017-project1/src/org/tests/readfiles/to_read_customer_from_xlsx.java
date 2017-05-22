@@ -5,10 +5,15 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.security.cert.X509CRLEntry;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import org.CompanyName.project1.physical.Tab_Customer;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -26,12 +31,35 @@ public class to_read_customer_from_xlsx
 		File f = Res.getDesktopFile("dsa2017-data/1e2/customers.xlsx");
 		
 		List<Tab_Customer> kq = readList(f, Tab_Customer.class);
-		for(Tab_Customer x: kq) System.out.println(x.cus_name);
+		for(Tab_Customer x: kq) 
+			System.out.println(x.cus_name + "|" + x.phone);
 		
+		Tab_Customer t = new Tab_Customer();
+		t.ccode = "CST1234";
+		t.cus_name = "Khach hang moi them";
+		t.phone = "0912345345";
+		kq.add(t);
+		
+		showData(kq);
+			
 		f = Res.getDesktopFile("test1.xlsx");
-		writeList(kq.subList(0, 5), f);		
+		writeList(kq, f);		
 	}
 	
+	private static void showData(List<Tab_Customer> x) 
+	{
+		JFrame f = new JFrame();
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSize(320, 200);
+		f.setLocation(10, 10);
+		
+		JTextArea a = new JTextArea();
+		f.add(new JScrollPane(a));
+		for(Tab_Customer xk: x) a.append(xk.cus_name + "\r\n");
+		
+		f.setVisible(true);
+	}
+
 	public static<T1> void writeList(List<T1> items, File f) throws Exception
 	{
 		XSSFWorkbook book = new XSSFWorkbook();
