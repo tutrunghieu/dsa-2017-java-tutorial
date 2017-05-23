@@ -2,11 +2,58 @@ package dsa2017.day5.bst;
 
 import java.util.Stack;
 
-import dsa2017.utils.Res;
-
 public class SearchTree 
 {
 	public SearchNode root = null;
+	
+	public void dump() 
+	{
+		if(root == null) 
+		{
+			System.out.println("Empty tree");
+			return;
+		}
+		
+		Stack<SearchNode> todo = new Stack<SearchNode>();
+		todo.push(root);
+		while(!todo.isEmpty())
+		{
+			SearchNode cur = todo.pop();
+			System.out.println(cur);
+			
+			if(cur.right != null) todo.push(cur.right);
+			if(cur.left != null) todo.push(cur.left);
+		}
+		
+		return;
+	}
+	
+	public void dumpWithDash() 
+	{
+		System.out.println("======= tree ");
+		
+		if(root == null) 
+		{
+			System.out.println("Empty tree");
+			return;
+		}
+		
+		Stack<SearchNode> todo = new Stack<SearchNode>();
+		todo.push(root);
+		while(!todo.isEmpty())
+		{
+			SearchNode cur = todo.pop();
+			
+			for(int k=0; k<cur.getLevel(); k++) System.out.print("-- ");
+			System.out.println(cur);
+			
+			if(cur.right != null) todo.push(cur.right);
+			if(cur.left != null) todo.push(cur.left);
+		}
+		
+		return;
+	}	
+
 	
 	public void add(Integer x) 
 	{
@@ -46,30 +93,6 @@ public class SearchTree
 		else return null;
 	}
 
-	public void dump() 
-	{
-		if(root == null) 
-		{
-			System.out.println("Empty tree");
-			return;
-		}
-		
-		Stack<SearchNode> todo = new Stack<SearchNode>();
-		todo.push(root);
-		while(!todo.isEmpty())
-		{
-			SearchNode cur = todo.pop();
-			
-			System.out.println(cur.hashCode()
-					+ "| data=" + cur.data
-					+ "| parent=" + Res.code(cur.parent) );
-			
-			if(cur.right != null) todo.push(cur.right);
-			if(cur.left != null) todo.push(cur.left);
-		}
-		
-		return;
-	}
 
 	public void remove(int x) 
 	{
