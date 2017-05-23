@@ -5,6 +5,15 @@ import java.util.Stack;
 
 public class SearchTreeDsw extends SearchTree 
 {
+	public SearchTreeDsw() 
+	{
+		
+	}
+	public SearchTreeDsw(SearchNode n) 
+	{
+		super(n);
+	}
+
 	public void flatten() 
 	{
 		SearchNode x1 = root;

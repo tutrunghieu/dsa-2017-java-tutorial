@@ -6,6 +6,16 @@ public class SearchTree
 {
 	public SearchNode root = null;
 	
+	public SearchTree() 
+	{
+		
+	}
+	
+	public SearchTree(SearchNode n) 
+	{
+		root = n;
+	}
+
 	public void dump() 
 	{
 		dump(false);
