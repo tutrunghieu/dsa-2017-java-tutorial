@@ -35,22 +35,27 @@ public class SearchTree
 	public boolean search(int x) 
 	{
 		if(root==null) return false;
-		return search(x, root);
+		return search(x, root) != null;
 	}
 
-	private boolean search(int x, SearchNode n) 
+	private SearchNode search(int x, SearchNode n) 
 	{
-		if(x==n.data) return true;
+		if(x==n.data) return n;
 		if(x<n.data && n.left != null) return search(x, n.left);
 		else if(x>n.data && n.right != null) return search(x, n.right);
-		else return false;
+		else return null;
 	}
 
 	public void dump() 
 	{
-		Stack<SearchNode> todo = new Stack<SearchNode>();
-		if(root != null) todo.push(root);
+		if(root == null) 
+		{
+			System.out.println("Empty tree");
+			return;
+		}
 		
+		Stack<SearchNode> todo = new Stack<SearchNode>();
+		todo.push(root);
 		while(!todo.isEmpty())
 		{
 			SearchNode cur = todo.pop();
@@ -64,6 +69,42 @@ public class SearchTree
 		}
 		
 		return;
+	}
+
+	public void remove(int x) 
+	{
+		if(root == null) return;
+		SearchNode p = search(x, root);
+		if(p != null) remove(p, p.parent);
+	}
+
+	private void remove(SearchNode n, SearchNode p) 
+	{
+		//if n has only one child c, and p.left==n,then p.left = c
+		//if n has only one child c, and p.right==n,then p.right = c
+		if(n.left == null || n.right == null) 
+		{
+			SearchNode c = (n.left==null ? n.right : n.left);
+			
+			if(p==null) {
+				root = c;
+			} 
+			
+			else {
+				if(p.left==n) p.left = c; 
+				else if(p.right==n) p.right = c;				
+			}
+			
+			if(c != null) c.parent = p;
+		} 
+		
+		//if n has both child
+		else {
+			SearchNode t = n.left;
+			while(t.left != null) t = t.left;
+			t.parent.left = null;
+			n.data = t.data;
+		}
 	}
 
 
