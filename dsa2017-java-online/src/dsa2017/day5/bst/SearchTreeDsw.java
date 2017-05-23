@@ -2,7 +2,6 @@ package dsa2017.day5.bst;
 
 import java.util.Set;
 import java.util.Stack;
-import java.util.TreeSet;
 
 public class SearchTreeDsw extends SearchTree 
 {
@@ -10,20 +9,13 @@ public class SearchTreeDsw extends SearchTree
 	{
 		SearchNode x1 = root;
 		
-		this.dumpWithDash();
-
 		while(x1 != null) 
 		{
-			System.out.println();
-			System.out.println("processing " + x1);
-			if(x1.left != null) System.out.println("processing " + x1.left.data);
-			if(x1.right != null) System.out.println("processing " + x1.right.data);
 			x1 = rotateLeft(x1);
-			this.dumpWithDash();
-			
 			x1 = x1.right;
 		}
-		
+
+		return;
 	}
 
 	private SearchNode rotateLeft(SearchNode x1) 

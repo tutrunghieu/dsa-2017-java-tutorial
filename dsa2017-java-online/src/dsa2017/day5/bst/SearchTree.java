@@ -8,43 +8,22 @@ public class SearchTree
 	
 	public void dump() 
 	{
-		if(root == null) 
-		{
-			System.out.println("Empty tree");
-			return;
-		}
-		
-		Stack<SearchNode> todo = new Stack<SearchNode>();
-		todo.push(root);
-		while(!todo.isEmpty())
-		{
-			SearchNode cur = todo.pop();
-			System.out.println(cur);
-			
-			if(cur.right != null) todo.push(cur.right);
-			if(cur.left != null) todo.push(cur.left);
-		}
-		
-		return;
+		dump(false);
 	}
 	
-	public void dumpWithDash() 
+	public void dump(boolean dash) 
 	{
 		System.out.println("======= tree ");
-		
-		if(root == null) 
-		{
-			System.out.println("Empty tree");
-			return;
-		}
+		if(root == null) System.out.println("Empty tree");
 		
 		Stack<SearchNode> todo = new Stack<SearchNode>();
-		todo.push(root);
+		if(root != null) todo.push(root);
+		
 		while(!todo.isEmpty())
 		{
 			SearchNode cur = todo.pop();
 			
-			for(int k=0; k<cur.getLevel(); k++) System.out.print("-- ");
+			if(dash) for(int k=0; k<cur.getLevel(); k++) System.out.print("-- ");
 			System.out.println(cur);
 			
 			if(cur.right != null) todo.push(cur.right);
