@@ -7,14 +7,7 @@ public class to_flattern_the_tree {
 	public static void main(String[] args)
 	{
 		SearchTreeDsw t = new SearchTreeDsw();
-		t.add(15);
-		t.add(4);
-		t.add(1);
-		t.add(20);
-		t.add(17);
-		t.add(19);
-		t.add(18);
-		t.add(5);
+		//t.addMany(15, 4, 1, 20, 17, 19, 18, 5);
 		
 		System.out.println( t.collect(new TreeSet<Integer>()) );
 		t.flatten();
