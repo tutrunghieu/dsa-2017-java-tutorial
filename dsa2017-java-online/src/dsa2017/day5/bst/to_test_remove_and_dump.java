@@ -13,16 +13,8 @@ public class to_test_remove_and_dump {
 		t.dump(true);
 		
 		System.out.println( t.collect(new TreeSet<Integer>()) );
-		t.remove(15);
+		t.remove(4);
 		System.out.println( t.collect(new TreeSet<Integer>()) );
-		
-//		t.remove(4); 
-		t.remove(15); 
-//		t.remove(16); 
-//		t.remove(19); 
-//		t.remove(20); 
-//		t.remove(17); 
-		//t.dump(true);
 	}
 
 }

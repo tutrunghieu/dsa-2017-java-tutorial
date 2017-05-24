@@ -1,14 +1,16 @@
 package dsa2017.day5.bst_dsw;
 
-public class to_fold_the_tree {
+import java.util.TreeSet;
+
+public class to_flatten_the_tree {
 
 	public static void main(String[] args)
 	{
 		SearchTreeDsw t = new SearchTreeDsw();
-		t.addMany(1, 2, 3, 4, 5, 6, 7);
-		t.dump(true);
+		t.addMany(15, 4, 1, 20, 17, 19, 18, 5);
 		
-		t.fold(4);
+		t.dump(true);
+		t.flatten();
 		t.dump(true);
 	}
 

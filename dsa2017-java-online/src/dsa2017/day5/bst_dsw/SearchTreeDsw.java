@@ -34,8 +34,6 @@ public class SearchTreeDsw extends SearchTree
 	{
 		while(x1.left != null) 
 		{
-			//this.dumpWithDash();
-			
 			SearchNode x2 = x1.left;
 			SearchNode r2 = x2.right;
 			
@@ -50,9 +48,6 @@ public class SearchTreeDsw extends SearchTree
 			
 			x2.parent = x1.parent; 
 			x1.parent = x2;
-			
-//			System.out.println("rotating " + x1);
-//			System.out.println("rotating " + x2);
 			
 			x1 = x2;
 		}
@@ -77,28 +72,22 @@ public class SearchTreeDsw extends SearchTree
 		return s;
 	}
 
-	public void fold(int c) 
-	{
-		while(true) 
-		{
+	public void fold(int c) {
+		while(true) {
 			SearchNode x1 = root;
-			
-			while(x1 != null) 
-			{
+			while(x1 != null) {
 				x1 = fold(x1);
 				if(root.data == c) break;
 			}
-			
 			if(root.data == c) break;
 		}
-		
 		return;
 	}
 
 	private SearchNode fold(SearchNode x1) 
 	{
 		if(x1==null || x1.right == null) return null;
-		System.out.println("folding " + x1);
+		//System.out.println("folding " + x1);
 		
 		SearchNode x2 = x1.right;
 		SearchNode l2 = x2.left;
@@ -118,7 +107,7 @@ public class SearchTreeDsw extends SearchTree
 		x1 = x2.right;
 		if(x1 != null) x1 = x1.right;
 		
-		this.dump(true);
+		//this.dump(true);
 		
 		return x2.right;
 	}
