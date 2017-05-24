@@ -1,4 +1,4 @@
-package dsa2017.day5.bst;
+package dsa2017.day5.bst_dsw;
 
 public class to_fold_the_tree {
 

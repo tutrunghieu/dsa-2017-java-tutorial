@@ -96,7 +96,8 @@ public class SearchTree
 		//if n has only one child c, and p.right==n,then p.right = c
 		if(n.left == null || n.right == null) 
 		{
-			SearchNode c = (n.left==null ? n.right : n.left);
+			SearchNode c = (n.left==null 
+					? n.right : n.left);
 			
 			if(p==null) {
 				root = c;
@@ -110,11 +111,11 @@ public class SearchTree
 			if(c != null) c.parent = p;
 		} 
 		
-		//if n has both child
+		//if n has both children
 		else {
 			SearchNode t = n.left;
 			while(t.left != null) t = t.left;
-			t.parent.left = null;
+			t.parent.left = t.right;
 			n.data = t.data;
 		}
 	}

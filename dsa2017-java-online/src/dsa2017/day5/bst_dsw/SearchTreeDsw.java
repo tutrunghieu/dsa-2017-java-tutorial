@@ -1,7 +1,10 @@
-package dsa2017.day5.bst;
+package dsa2017.day5.bst_dsw;
 
 import java.util.Set;
 import java.util.Stack;
+
+import dsa2017.day5.bst.SearchNode;
+import dsa2017.day5.bst.SearchTree;
 
 public class SearchTreeDsw extends SearchTree 
 {

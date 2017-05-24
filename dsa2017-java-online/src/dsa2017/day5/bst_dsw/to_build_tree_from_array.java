@@ -1,10 +1,12 @@
-package dsa2017.day5.bst;
+package dsa2017.day5.bst_dsw;
+
+import dsa2017.day5.bst.SearchNode;
 
 public class to_build_tree_from_array {
 
 	public static void main(String[] args) 
 	{
-		int[] a = { 1, 2, 3, 4, 5, 6 };
+		int[] a = { 1, 2, 3, 4, 5, 6, 7 };
 		
 		SearchNode n = buildTree(a, 0, a.length, null);
 		SearchTreeDsw t = new SearchTreeDsw(n);
