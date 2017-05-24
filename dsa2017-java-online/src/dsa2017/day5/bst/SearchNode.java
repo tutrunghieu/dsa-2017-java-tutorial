@@ -4,6 +4,10 @@ import dsa2017.utils.Res;
 
 public class SearchNode {
 
+	public SearchNode() {}
+	
+	public SearchNode(int d) { data = d;}
+	
 	@Override
 	public String toString() {
 		return "id="+Res.code(this)
