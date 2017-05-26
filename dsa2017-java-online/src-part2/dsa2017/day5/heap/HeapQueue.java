@@ -30,7 +30,7 @@ public class HeapQueue {
 			else break;
 		}
 		
-		print(data, 0, count);
+		//print(data, 0, count);
 		return;
 	}
 
@@ -66,6 +66,11 @@ public class HeapQueue {
 		int t = a[x1];
 		a[x1] = a[x2];
 		a[x2] = t;		
+	}
+
+	public boolean empty()
+	{
+		return count==0;
 	}
 	
 }
