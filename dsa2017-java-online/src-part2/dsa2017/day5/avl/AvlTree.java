@@ -1,5 +1,7 @@
 package dsa2017.day5.avl;
 
+import dsa2017.day5.bst.SearchNode;
+
 public class AvlTree 
 {
 	public AvlNode root;
@@ -7,6 +9,20 @@ public class AvlTree
 	public AvlTree() 
 	{
 	}
+	
+	public AvlNode search(int x) 
+	{
+		if(root==null) return null;
+		return search(x, root);
+	}
+
+	public AvlNode search(int x, AvlNode n) 
+	{
+		if(x==n.data) return n;
+		if(x<n.data && n.left != null) return search(x, n.left);
+		else if(x>n.data && n.right != null) return search(x, n.right);
+		else return null;
+	}	
 
 	public AvlNode add(int x)
 	{
@@ -99,10 +115,32 @@ public class AvlTree
 		else if(g.left==p) g.left = q;
 		else g.right = q;
 		
-		a.parent = p;
-		b.parent = p;
-		c.parent = q;
+		if(a != null) a.parent = p;
+		if(b != null) b.parent = p;
+		if(c != null) c.parent = q;
 		p.parent = q;
 		q.parent = g;		
+	}
+
+	public void addMany(int... a) 
+	{
+		for(int ak: a) add(ak);
+	}
+
+	public AvlNode getRoot() 
+	{
+		return root;
+	}
+
+	public int height() 
+	{
+		return height(root);
+	}
+
+	public int maxWidth() 
+	{
+		int h = height(root);
+		if(h==0) return 0;
+		return (int)Math.pow(2, h-1);
 	}
 }
