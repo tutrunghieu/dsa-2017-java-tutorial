@@ -16,7 +16,7 @@ public class AvlFramework
 		LevelTable<AvlNode> left = before(a);
 		LevelTable<AvlNode> right = after(a);
 		
-		AvlTreeUtils.figureLR(800, 600, 
+		AvlTreeUtils.figureLR(1400, 768, 
 				x -> AvlTreeUtils.draw(x, left), 
 				x -> AvlTreeUtils.draw(x, right));					
 	}
@@ -25,8 +25,8 @@ public class AvlFramework
 	{
 		AvlTree tree1 = new AvlTree(a);
 		
-		System.out.println("====== before rotation");
-		tree1.dump();
+//		System.out.println("====== before rotation");
+//		tree1.dump();
 		
 		return tree1.getLevelTable();
 	}
@@ -36,8 +36,8 @@ public class AvlFramework
 		AvlTree tree = new AvlTree(a);
 		action.invokeAction(tree);
 		
-		System.out.println("\n====== after rotation");
-		tree.dump();
+//		System.out.println("\n====== after rotation");
+//		tree.dump();
 		
 		return tree.getLevelTable();
 	}	

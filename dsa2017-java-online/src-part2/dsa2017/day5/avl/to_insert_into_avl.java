@@ -16,11 +16,11 @@ public class to_insert_into_avl {
 //		System.out.println("\n====== after rotation");
 //		tree.dump();
 		
-		int n = tree.height();
-		System.out.println("height=" + n);
-		
-		int w = tree.maxWidth();
-		System.out.println("width=" + w);
+//		int n = tree.height();
+//		System.out.println("height=" + n);
+//		
+//		int w = tree.maxWidth();
+//		System.out.println("width=" + w);
 	}
 
 }

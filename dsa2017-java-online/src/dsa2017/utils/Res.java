@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Res {
 
+	public static final boolean IGNORE = false;
+
 	public static File getDesktopFile(String name)
 	{
 		return new File(System.getProperty("user.home") + "/Desktop/" + name);

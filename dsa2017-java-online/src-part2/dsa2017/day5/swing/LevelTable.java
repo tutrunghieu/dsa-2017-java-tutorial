@@ -1,6 +1,7 @@
 package dsa2017.day5.swing;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -33,6 +34,7 @@ public class LevelTable<T>
 
 	public LevelMetag<T> getMetag(T x) 
 	{
+		if(x==null) return null;
 		return metags.get(x.hashCode());
 	}
 
@@ -57,5 +59,13 @@ public class LevelTable<T>
 	{
 		return (int)Math.pow(2, maxLevel());
 	}
+
+	public List<Integer> keySetReversed() 
+	{
+		List<Integer> res = new ArrayList<Integer>(levels.keySet());
+		Collections.reverse(res);
+		return res;
+	}
+	
 
 }

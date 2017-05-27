@@ -21,10 +21,6 @@ public class to_draw_level_tree
 	private static LevelTable<AvlNode> before(int[] a) 
 	{
 		AvlTree tree1 = new AvlTree(a);
-		
-		System.out.println("====== before rotation");
-		tree1.dump();
-		
 		return tree1.getLevelTable();
 	}
 	
@@ -32,9 +28,6 @@ public class to_draw_level_tree
 	{
 		AvlTree tree = new AvlTree(a);
 		tree.rotate_pA2_qB1( tree.search(4) );
-		
-		System.out.println("\n====== after rotation");
-		tree.dump();
 		
 		return tree.getLevelTable();
 	}

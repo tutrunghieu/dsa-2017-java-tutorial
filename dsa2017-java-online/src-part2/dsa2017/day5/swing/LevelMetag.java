@@ -9,6 +9,7 @@ public class LevelMetag<T> {
 	public int drawY;
 	public int sizeW;
 	public int sizeH;
+	public int height;
 
 	public LevelMetag(int y, int x, T p) 
 	{
