@@ -1,10 +1,11 @@
 package dsa2017.day5.swing;
 
-public class TabularNode {
+public class LevelNode {
 
 	public Object original;
+	public int level;
 
-	public TabularNode(Object ik) 
+	public LevelNode(Object ik) 
 	{
 		original = ik;
 	}

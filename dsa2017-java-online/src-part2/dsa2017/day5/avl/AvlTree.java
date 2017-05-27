@@ -1,6 +1,6 @@
 package dsa2017.day5.avl;
 
-import dsa2017.day5.bst.SearchNode;
+import dsa2017.day5.swing.LevelTable;
 
 public class AvlTree 
 {
@@ -142,5 +142,19 @@ public class AvlTree
 		int h = height(root);
 		if(h==0) return 0;
 		return (int)Math.pow(2, h-1);
+	}
+
+	public LevelTable<AvlNode> getLevelTable() 
+	{
+		LevelTable<AvlNode> levels = new LevelTable<AvlNode>();
+		getLevelTable(root, 0, 0, levels);		
+		return levels;
+	}
+
+	public void getLevelTable(AvlNode p, int l, int loc, LevelTable<AvlNode> levels) 
+	{
+		levels.add(l, loc, p);
+		if(p.left != null) getLevelTable(p.left, l+1, loc*2 + 0, levels);
+		if(p.right != null) getLevelTable(p.right, l+1, loc*2 + 1, levels);
 	}
 }
