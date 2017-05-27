@@ -1,9 +1,11 @@
-package apps.clickandsave.modules;
+package apps.clickandsave;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import apps.clickandsave.MenuFrame;
+import apps.clickandsave.modules.AbcModuleEdit;
+import apps.clickandsave.modules.AbcModuleFile;
+import apps.clickandsave.modules.AbcModuleHelp;
 
 @SuppressWarnings("serial")
 public class AbcMenuFrame extends MenuFrame 
