@@ -3,22 +3,25 @@ package dsa2017.day5.swing;
 import dsa2017.day5.avl.AvlNode;
 import dsa2017.day5.avl.AvlTree;
 
-public class to_rotate_case1
+public class AvlFramework 
 {
+	protected TypedAction<AvlTree> action;
+	protected int[] data;
 
-	public static void main(String[] args) 
+	public void run(int[] a, TypedAction<AvlTree> lf) 
 	{
-		int[] a = {4, 3, 10, 12, 8, 7 };
+		action = lf;
+		data = a;
 		
 		LevelTable<AvlNode> left = before(a);
 		LevelTable<AvlNode> right = after(a);
 		
 		AvlTreeUtils.figureLR(800, 600, 
 				x -> AvlTreeUtils.draw(x, left), 
-				x -> AvlTreeUtils.draw(x, right));			
+				x -> AvlTreeUtils.draw(x, right));					
 	}
 
-	private static LevelTable<AvlNode> before(int[] a) 
+	private LevelTable<AvlNode> before(int[] a) 
 	{
 		AvlTree tree1 = new AvlTree(a);
 		
@@ -28,17 +31,14 @@ public class to_rotate_case1
 		return tree1.getLevelTable();
 	}
 	
-	private static LevelTable<AvlNode> after(int[] a) 
+	private LevelTable<AvlNode> after(int[] a) 
 	{
 		AvlTree tree = new AvlTree(a);
-		tree.rotate_pA2_qB1( tree.search(4) );
+		action.invokeAction(tree);
 		
 		System.out.println("\n====== after rotation");
 		tree.dump();
 		
 		return tree.getLevelTable();
-	}
-	
-
-	
+	}	
 }

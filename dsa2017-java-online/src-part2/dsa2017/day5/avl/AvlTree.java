@@ -101,6 +101,44 @@ public class AvlTree
 			System.out.print(" right_of_" + p.data);			
 	}
 
+
+
+	public void addMany(int... a) 
+	{
+		for(int ak: a) add(ak);
+	}
+
+	public AvlNode getRoot() 
+	{
+		return root;
+	}
+
+	public int height() 
+	{
+		return height(root);
+	}
+
+	public int maxWidth() 
+	{
+		int h = height(root);
+		if(h==0) return 0;
+		return (int)Math.pow(2, h-1);
+	}
+
+	public LevelTable<AvlNode> getLevelTable() 
+	{
+		LevelTable<AvlNode> levels = new LevelTable<AvlNode>();
+		getLevelTable(root, 0, 0, levels);		
+		return levels;
+	}
+
+	public void getLevelTable(AvlNode p, int l, int loc, LevelTable<AvlNode> levels) 
+	{
+		levels.add(l, loc, p);
+		if(p.left != null) getLevelTable(p.left, l+1, loc*2 + 0, levels);
+		if(p.right != null) getLevelTable(p.right, l+1, loc*2 + 1, levels);
+	}
+	
 	public void rotate_pA2_qA1(AvlNode p) 
 	{
 		AvlNode g, q, a, b, c;
@@ -148,42 +186,30 @@ public class AvlTree
 		p.parent = r;
 		q.parent = r;		
 		r.parent = g;
-	}	
+	}		
 
-	public void addMany(int... a) 
+	public void rotate_pB2_qA1(AvlNode p) 
 	{
-		for(int ak: a) add(ak);
-	}
-
-	public AvlNode getRoot() 
-	{
-		return root;
-	}
-
-	public int height() 
-	{
-		return height(root);
-	}
-
-	public int maxWidth() 
-	{
-		int h = height(root);
-		if(h==0) return 0;
-		return (int)Math.pow(2, h-1);
-	}
-
-	public LevelTable<AvlNode> getLevelTable() 
-	{
-		LevelTable<AvlNode> levels = new LevelTable<AvlNode>();
-		getLevelTable(root, 0, 0, levels);		
-		return levels;
-	}
-
-	public void getLevelTable(AvlNode p, int l, int loc, LevelTable<AvlNode> levels) 
-	{
-		levels.add(l, loc, p);
-		if(p.left != null) getLevelTable(p.left, l+1, loc*2 + 0, levels);
-		if(p.right != null) getLevelTable(p.right, l+1, loc*2 + 1, levels);
+		AvlNode g, q, r, a, b, c, d;
+		g = p.parent; q = p.left; r = q.right;
+		a = q.left; b = r.left; c = r.right; d = p.right;
+		
+		p.left = a; p.right = b;
+		q.left = c; q.right = d;
+		r.left = p; r.right = q;
+		
+		if(g==null) root = r;
+		else if(g.left==p) g.left = r;
+		else g.right = r;
+		
+		if(a != null) a.parent = p;
+		if(b != null) b.parent = p;
+		
+		if(c != null) c.parent = q;
+		if(d != null) d.parent = q;
+		p.parent = r;
+		q.parent = r;		
+		r.parent = g;		
 	}
 
 
