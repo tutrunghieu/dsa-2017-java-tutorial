@@ -59,23 +59,28 @@ public class MenuFrame extends JFrame {
 			par = cur;
 			cur = cur.findOrInsert(pk);
 		}
+				
+//		System.out.println("root=" + root.hashCode());
+//		System.out.println("par=" + par.hashCode());
+//		System.out.println("cur=" + cur.hashCode());
 		
-		System.out.println("root=" + root.hashCode());
-		System.out.println("par=" + par.hashCode());
-		System.out.println("cur=" + cur.hashCode());
+		if(src instanceof String) 
+		{
+			javax.swing.JMenu t = (javax.swing.JMenu)par.object;
+			t.addSeparator();
+		}
 		
-		if(src instanceof javax.swing.JMenu) 
+		else if(src instanceof javax.swing.JMenu) 
 		{
 			javax.swing.JMenuBar t = (javax.swing.JMenuBar)root.object;
 			t.add((javax.swing.JMenu)src);
 		}
 		
-		if(src instanceof javax.swing.JMenuItem) 
-		try
+		else if(src instanceof javax.swing.JMenuItem) 
 		{
 			javax.swing.JMenu t = (javax.swing.JMenu)par.object;
 			t.add((javax.swing.JMenuItem)src);
-		} catch(Exception xp) {} 
+		}  
 		
 		cur.object = src;
 		

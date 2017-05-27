@@ -1,13 +1,13 @@
 package apps.MyFirstApp.utils;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 public class MenuFrameNode 
 {
 	public Object object;
-	protected Map<String, MenuFrameNode> nodes = new TreeMap<String, MenuFrameNode>();
+	protected Map<String, MenuFrameNode> nodes = new LinkedHashMap<String, MenuFrameNode>();
 
 	public MenuFrameNode findOrInsert(String pk) 
 	{
@@ -38,6 +38,11 @@ public class MenuFrameNode
 		if(object instanceof javax.swing.JMenuItem)
 		{
 			return ((javax.swing.JMenuItem)object).getText();
+		}
+		
+		if(object instanceof javax.swing.JMenuBar)
+		{
+			return ((javax.swing.JMenuBar)object).getName();
 		}
 		
 		return object.toString();

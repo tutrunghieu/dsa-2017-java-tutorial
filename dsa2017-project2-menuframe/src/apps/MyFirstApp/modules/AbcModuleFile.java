@@ -19,5 +19,10 @@ public class AbcModuleFile extends AbcBaseModule {
 		return null;
 	}
 
+	public Object actionFileExit(ActionEvent x) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

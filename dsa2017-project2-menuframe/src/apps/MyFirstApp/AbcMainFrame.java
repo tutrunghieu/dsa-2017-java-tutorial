@@ -22,11 +22,15 @@ public class AbcMainFrame extends MenuFrame
 		super.menuPut("file", newJMenu("File", 'F'));
 		super.menuPut("file/new", newJMenuItem("New", 'N', 'N'), x -> menuFile.actionFileNew(x));
 		super.menuPut("file/open", newJMenuItem("Open", 'O', 'O'), x -> menuFile.actionFileOpen(x));
+		super.menuPut("file/***1", "");
 		super.menuPut("file/save", newJMenuItem("Save", 'S', 'S'), x -> menuFile.actionFileSave(x));
+		super.menuPut("file/***2", "");
+		super.menuPut("file/exit", newJMenuItem("Exit", 'x', 'Q'), x -> menuFile.actionFileExit(x));
 		
 		super.menuPut("edit", newJMenu("Edit", 'E'));
 		super.menuPut("edit/copy", newJMenuItem("Copy", 'C', 'C'), x -> menuEdit.actionEditCopy(x));
 		super.menuPut("edit/cut", newJMenuItem("Cut", 'u', 'X'), x -> menuEdit.actionEditCut(x));
+		super.menuPut("edit/***1", "");
 		super.menuPut("edit/paste", newJMenuItem("Paste", 'p', 'V'), x -> menuEdit.actionEditPaste(x));
 		
 		super.menuPut("help", newJMenu("Help", 'H'));
