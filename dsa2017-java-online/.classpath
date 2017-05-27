@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src-part1"/>
 	<classpathentry kind="src" path="src-part2"/>
 	<classpathentry kind="src" path="src-proto"/>
 	<classpathentry kind="src" path="src-probing"/>
