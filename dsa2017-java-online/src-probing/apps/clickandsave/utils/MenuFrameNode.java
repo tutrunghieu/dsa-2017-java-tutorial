@@ -1,4 +1,4 @@
-package apps.clickandsave;
+package apps.clickandsave.utils;
 
 import java.util.Map;
 import java.util.Set;

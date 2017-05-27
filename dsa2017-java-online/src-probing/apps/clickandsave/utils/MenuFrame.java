@@ -1,7 +1,13 @@
-package apps.clickandsave;
+package apps.clickandsave.utils;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+import apps.clickandsave.modules.AbcModuleFile;
 
 @SuppressWarnings("serial")
 public class MenuFrame extends JFrame {
@@ -19,7 +25,14 @@ public class MenuFrame extends JFrame {
 		this.setJMenuBar((JMenuBar)root.object);
 	}
 
-	public<T1> T1 put(String path, T1 src) 
+	public JMenuItem menuPut(String string, JMenuItem menu, ActionListener lf) 
+	{
+		JMenuItem res = menuPut(string, menu);
+		res.addActionListener(lf);
+		return res;
+	}
+	
+	public<T1> T1 menuPut(String path, T1 src) 
 	{
 		MenuFrameNode cur = root, par = root;
 		
@@ -51,7 +64,7 @@ public class MenuFrame extends JFrame {
 		return src;
 	}
 
-	public void dump() 
+	public void menuDump() 
 	{
 		dump(root, 0);
 	}
