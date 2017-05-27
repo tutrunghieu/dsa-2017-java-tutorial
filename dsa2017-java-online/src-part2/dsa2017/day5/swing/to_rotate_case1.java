@@ -31,7 +31,7 @@ public class to_rotate_case1
 	private static LevelTable<AvlNode> after(int[] a) 
 	{
 		AvlTree tree = new AvlTree(a);
-		tree.rotate_p2_q1( tree.search(4) );
+		tree.rotate_pA2_qB1( tree.search(4) );
 		
 		System.out.println("\n====== after rotation");
 		tree.dump();

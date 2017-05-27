@@ -101,7 +101,7 @@ public class AvlTree
 			System.out.print(" right_of_" + p.data);			
 	}
 
-	public void rotate_p2_q1(AvlNode p) 
+	public void rotate_pA2_qA1(AvlNode p) 
 	{
 		AvlNode g, q, a, b, c;
 		g = p.parent;
@@ -125,6 +125,30 @@ public class AvlTree
 		p.parent = q;
 		q.parent = g;		
 	}
+	
+	public void rotate_pA2_qB1(AvlNode p) 
+	{
+		AvlNode g, q, r, a, b, c, d;
+		g = p.parent; q = p.right; r = q.left;
+		a = p.left; b = r.left; c = r.right; d = q.right;
+		
+		p.left = a; p.right = b;
+		q.left = c; q.right = d;
+		r.left = p; r.right = q;
+		
+		if(g==null) root = r;
+		else if(g.left==p) g.left = r;
+		else g.right = r;
+		
+		if(a != null) a.parent = p;
+		if(b != null) b.parent = p;
+		
+		if(c != null) c.parent = q;
+		if(d != null) d.parent = q;
+		p.parent = r;
+		q.parent = r;		
+		r.parent = g;
+	}	
 
 	public void addMany(int... a) 
 	{
@@ -161,4 +185,6 @@ public class AvlTree
 		if(p.left != null) getLevelTable(p.left, l+1, loc*2 + 0, levels);
 		if(p.right != null) getLevelTable(p.right, l+1, loc*2 + 1, levels);
 	}
+
+
 }
