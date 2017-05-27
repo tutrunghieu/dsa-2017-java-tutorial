@@ -3,12 +3,12 @@ package dsa2017.day5.swing;
 import dsa2017.day5.avl.AvlNode;
 import dsa2017.day5.avl.AvlTree;
 
-public class to_draw_level_tree
+public class to_rotate_case1
 {
 
 	public static void main(String[] args) 
 	{
-		int[] a = {4, 3, 10, 8, 11, 12 };
+		int[] a = {4, 3, 10, 12, 8, 7 };
 		
 		LevelTable<AvlNode> left = before(a);
 		LevelTable<AvlNode> right = after(a);

@@ -10,6 +10,10 @@ public class AvlTree
 	{
 	}
 	
+	public AvlTree(int[] a) {
+		addMany(a);
+	}
+
 	public AvlNode search(int x) 
 	{
 		if(root==null) return null;
