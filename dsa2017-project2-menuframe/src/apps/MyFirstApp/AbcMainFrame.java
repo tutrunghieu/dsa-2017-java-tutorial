@@ -9,13 +9,13 @@ import apps.MyFirstApp.modules.AbcModuleHelp;
 import apps.MyFirstApp.utils.MenuFrame;
 
 @SuppressWarnings("serial")
-public class AbcMenuFrame extends MenuFrame 
+public class AbcMainFrame extends MenuFrame 
 {
 	protected AbcModuleFile menuFile = new AbcModuleFile();
 	protected AbcModuleEdit menuEdit = new AbcModuleEdit();
 	protected AbcModuleHelp menuHelp = new AbcModuleHelp();
 	
-	public AbcMenuFrame()
+	public AbcMainFrame()
 	{
 		this.setTitle("untitle");
 		
@@ -39,7 +39,7 @@ public class AbcMenuFrame extends MenuFrame
 
 	public static void main(String[] args) 
 	{
-		MenuFrame f = new AbcMenuFrame();
+		MenuFrame f = new AbcMainFrame();
 		f.setVisible(true);
 	}
 	
