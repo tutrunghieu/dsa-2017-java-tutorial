@@ -1,7 +1,7 @@
 package apps.clickandsave;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 import apps.clickandsave.modules.AbcModuleEdit;
 import apps.clickandsave.modules.AbcModuleFile;
@@ -17,20 +17,20 @@ public class AbcMenuFrame extends MenuFrame
 	
 	public AbcMenuFrame()
 	{
-		super.menuPut("file", new JMenu("File"));
-		super.menuPut("file/new", new JMenuItem("New"), x -> menuFile.actionFileNew(x));
-		super.menuPut("file/open", new JMenuItem("Open"), x -> menuFile.actionFileOpen(x));
-		super.menuPut("file/save", new JMenuItem("Save"), x -> menuFile.actionFileSave(x));
+		super.menuPut("file", newJMenu("File", 'F'));
+		super.menuPut("file/new", newJMenuItem("New", 'N', 'N'), x -> menuFile.actionFileNew(x));
+		super.menuPut("file/open", newJMenuItem("Open", 'O', 'O'), x -> menuFile.actionFileOpen(x));
+		super.menuPut("file/save", newJMenuItem("Save", 'S', 'S'), x -> menuFile.actionFileSave(x));
 		
-		super.menuPut("edit", new JMenu("Edit"));
-		super.menuPut("edit/copy", new JMenuItem("Copy"), x -> menuEdit.actionEditCopy(x));
-		super.menuPut("edit/cut", new JMenuItem("Cut"), x -> menuEdit.actionEditCut(x));
-		super.menuPut("edit/paste", new JMenuItem("Paste"), x -> menuEdit.actionEditPaste(x));
+		super.menuPut("edit", newJMenu("Edit", 'E'));
+		super.menuPut("edit/copy", newJMenuItem("Copy", 'C', 'C'), x -> menuEdit.actionEditCopy(x));
+		super.menuPut("edit/cut", newJMenuItem("Cut", 'u', 'X'), x -> menuEdit.actionEditCut(x));
+		super.menuPut("edit/paste", newJMenuItem("Paste", 'p', 'V'), x -> menuEdit.actionEditPaste(x));
 		
-		super.menuPut("help", new JMenu("Help"));
-		super.menuPut("help/started", new JMenuItem("Getting started"), x -> menuHelp.actionHelpStarted(x));
-		super.menuPut("help/index", new JMenuItem("Index"), x -> menuHelp.actionHelpIndex(x));
-		super.menuPut("help/about", new JMenuItem("About"), x -> menuHelp.actionHelpAbout(x));
+		super.menuPut("help", newJMenu("Help", 'H'));
+		super.menuPut("help/started", newJMenuItem("Getting started", 'G', KeyEvent.VK_F1), x -> menuHelp.actionHelpStarted(x));
+		super.menuPut("help/index", newJMenuItem("Index", 'I', KeyEvent.VK_F1, ActionEvent.ALT_MASK), x -> menuHelp.actionHelpIndex(x));
+		super.menuPut("help/about", newJMenuItem("About", 'A', KeyEvent.VK_F12), x -> menuHelp.actionHelpAbout(x));
 		
 		super.menuDump();
 	}

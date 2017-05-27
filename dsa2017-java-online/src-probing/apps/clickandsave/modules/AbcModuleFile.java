@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 public class AbcModuleFile extends AbcBaseModule {
 
 	public Object actionFileNew(ActionEvent x) {
-		// TODO Auto-generated method stub
+		System.out.println(x);
 		return null;
 	}
 

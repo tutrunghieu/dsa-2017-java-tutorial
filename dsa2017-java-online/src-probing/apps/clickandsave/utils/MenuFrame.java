@@ -4,10 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-
-import apps.clickandsave.modules.AbcModuleFile;
+import javax.swing.KeyStroke;
 
 @SuppressWarnings("serial")
 public class MenuFrame extends JFrame {
@@ -77,4 +77,23 @@ public class MenuFrame extends JFrame {
 		for(String nk: p.keySet() ) dump(p.get(nk), level+1);
 	}
 
+	public JMenu newJMenu(String name, int key) 
+	{
+		JMenu res = new JMenu(name);
+		res.setMnemonic(key);
+		return res;
+	}
+	
+	public JMenuItem newJMenuItem(String name, int alt, int ctrl) 
+	{
+		return newJMenuItem(name, alt, ctrl, ActionEvent.CTRL_MASK);
+	}
+	
+	public JMenuItem newJMenuItem(String name, int alt, int ctrl, int mask) 
+	{
+		JMenuItem res = new JMenuItem(name);		
+		res.setMnemonic(alt);
+		res.setAccelerator(KeyStroke.getKeyStroke(ctrl, mask));		
+		return res;
+	}	
 }
