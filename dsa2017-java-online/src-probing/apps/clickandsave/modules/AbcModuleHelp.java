@@ -1,4 +1,4 @@
-package dsa2017.probing5_menuframe;
+package apps.clickandsave.modules;
 
 public class AbcModuleHelp extends AbcBaseModule {
 

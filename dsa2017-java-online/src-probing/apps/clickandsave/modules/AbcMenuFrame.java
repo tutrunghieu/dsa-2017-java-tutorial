@@ -1,7 +1,9 @@
-package dsa2017.probing5_menuframe;
+package apps.clickandsave.modules;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import apps.clickandsave.MenuFrame;
 
 @SuppressWarnings("serial")
 public class AbcMenuFrame extends MenuFrame 

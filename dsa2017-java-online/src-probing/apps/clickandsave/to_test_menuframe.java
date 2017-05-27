@@ -1,4 +1,6 @@
-package dsa2017.probing5_menuframe;
+package apps.clickandsave;
+
+import apps.clickandsave.modules.AbcMenuFrame;
 
 public class to_test_menuframe {
 

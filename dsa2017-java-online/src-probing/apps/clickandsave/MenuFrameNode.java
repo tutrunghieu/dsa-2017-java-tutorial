@@ -1,13 +1,13 @@
-package dsa2017.probing5_menuframe;
+package apps.clickandsave;
 
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class MenuFrameNode {
-
+public class MenuFrameNode 
+{
 	public Object object;
-	protected Map<String, MenuFrameNode> nodes = new TreeMap<String, MenuFrameNode>(); 
+	protected Map<String, MenuFrameNode> nodes = new TreeMap<String, MenuFrameNode>();
 
 	public MenuFrameNode findOrInsert(String pk) 
 	{
