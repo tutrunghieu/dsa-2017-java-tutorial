@@ -1,13 +1,18 @@
 package apps.MyFirstApp.utils;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.InputStream;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
+
 
 @SuppressWarnings("serial")
 public class MenuFrame extends JFrame {
@@ -17,12 +22,25 @@ public class MenuFrame extends JFrame {
 	public MenuFrame()
 	{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setIconImage(imageFromResource(MenuFrame.class, "icon.png"));
 		this.setTitle("menu frame");
 		this.setSize(640, 480);
 		this.setLocationRelativeTo(null);
 		
 		root.object = new JMenuBar();
 		this.setJMenuBar((JMenuBar)root.object);
+	}
+
+	public Image imageFromResource(Class<?> cl, String name) 
+	{
+		try {
+			InputStream in = cl.getResourceAsStream(name);
+			BufferedImage img = ImageIO.read(in);
+			in.close();
+			return img;
+		}
+		
+		catch(Exception xp) { return null; }
 	}
 
 	public JMenuItem menuPut(String string, JMenuItem menu, ActionListener lf) 

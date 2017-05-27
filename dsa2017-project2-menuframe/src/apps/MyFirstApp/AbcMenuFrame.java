@@ -17,6 +17,8 @@ public class AbcMenuFrame extends MenuFrame
 	
 	public AbcMenuFrame()
 	{
+		this.setTitle("untitle");
+		
 		super.menuPut("file", newJMenu("File", 'F'));
 		super.menuPut("file/new", newJMenuItem("New", 'N', 'N'), x -> menuFile.actionFileNew(x));
 		super.menuPut("file/open", newJMenuItem("Open", 'O', 'O'), x -> menuFile.actionFileOpen(x));
