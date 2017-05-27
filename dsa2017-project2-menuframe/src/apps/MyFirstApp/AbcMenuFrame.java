@@ -35,4 +35,10 @@ public class AbcMenuFrame extends MenuFrame
 		super.menuDump();
 	}
 
+	public static void main(String[] args) 
+	{
+		MenuFrame f = new AbcMenuFrame();
+		f.setVisible(true);
+	}
+	
 }
