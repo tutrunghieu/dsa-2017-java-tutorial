@@ -13,6 +13,8 @@ public class to_test_countsort_msd {
 		List<String> a = Arrays.asList("BEG", "ABC", "DCA", "CDB", "ADC", "BCD", "BEF");
 		
 		a = radixSortMsd(a, 0, 3); 
+		
+		System.out.println("====== after");
 		System.out.println(a);
 	}
 
