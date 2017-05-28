@@ -1,35 +1,56 @@
 package dsa2017.probing7_countsort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class to_test_countsort_msd {
 
 	public static void main(String[] args) 
 	{
-		String[] a = { "BEG", "ABC", "DCA", "CDB", "ADC", "BCD", "BEF" };
+		List<String> a = Arrays.asList("BEG", "ABC", "DCA", "CDB", "ADC", "BCD", "BEF");
 		
-		a = radixSort(a, 2); System.out.println(Arrays.asList(a));
-		a = radixSort(a, 1); System.out.println(Arrays.asList(a));
-		a = radixSort(a, 2); System.out.println(Arrays.asList(a));
+		a = radixSortMsd(a, 0, 3); 
+		System.out.println(a);
 	}
 
-	private static String[] radixSort(String[] a, int d) 
+	private static List<String> radixSortMsd(List<String> a, int d, int nd) 
 	{
-		int[] C = new int['G'-'A' + 1];
-		int[] S = new int['G'-'A' + 1];
+		Map<Character, List<String>> G = new TreeMap<Character, List<String>>();
 		
-		for(String ak: a) { int j = radix(ak, d); C[j]++; }
-		for(int j=1; j<C.length; j++) S[j] = S[j-1] + C[j-1];
+		for(String ak: a)
+		{
+			char j = ak.charAt(d);
+			put(G, j, ak);
+		}
 		
-		String[] res = new String[a.length];
-		for(String ak: a) { int j = radix(ak, d); res[ S[j]++ ] = ak; }
+		System.out.println("====== " + d);
+		for(Character nk: G.keySet()) 
+		{
+			System.out.println("d="+d+" key="+nk+" sub=" + G.get(nk));
+		}
+		
+		List<String> res = new ArrayList<String>();
+		
+		for(Character nk: G.keySet()) 
+		{
+			List<String> gk = G.get(nk);
+			if(d+1<nd && gk.size() > 1) gk = radixSortMsd(gk, d+1, nd);
+			//System.out.println("adding " + nk + ": " + gk);
+			
+			res.addAll( G.get(nk) );			
+		}
 		
 		return res;
 	}
 
-	private static int radix(String ak, int d)
+	private static void put(Map<Character, List<String>> g, Character nk, String xk) 
 	{
-		return ak.charAt(d) - 'A';
+		List<String> gk = g.get(nk);
+		if(gk == null) g.put(nk, gk = new ArrayList<String>());
+		gk.add(xk);
 	}
 
 }
