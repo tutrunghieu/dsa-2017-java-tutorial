@@ -81,4 +81,9 @@ public class MyGraph
 		for(MyNode nk: nodes) if(a.equals(nk.data)) return nk;
 		return null;
 	}
+
+	public List<MyNode> getNodes() 
+	{
+		return nodes;
+	}
 }

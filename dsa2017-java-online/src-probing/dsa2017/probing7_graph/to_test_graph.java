@@ -17,14 +17,29 @@ public class to_test_graph {
 		
 		MyNode d = g.add(new MyNode("d")); 
 		MyNode e = g.add(new MyNode("e")); 
+		MyNode f = g.add(new MyNode("f")); 
 		MyLink de = g.add(new MyLink(d, e)); 
+		MyLink df = g.add(new MyLink(d, f)); 
 		
 		g.dump();
 		
-		placeAndDraw(g);		
+		//placeAndDraw(g);		
+		placeRandomAndDraw(g);		
 	}
 
-	private static void placeAndDraw(MyGraph g) 
+	protected static void placeRandomAndDraw(MyGraph g) 
+	{
+		for(MyNode nk: g.getNodes()) 
+		{
+			int x = (int)(Math.random() * 300);
+			int y = (int)(Math.random() * 300);
+			nk.tag = new MyTag(x, y, 20, 30);
+		}
+		
+		Figures.show(640, 480, x -> g.draw(x));
+	}
+	
+	protected static void placeAndDraw(MyGraph g) 
 	{
 		g.find("a").tag = new MyTag(10, 10, 20, 30);
 		g.find("b").tag = new MyTag(70, 120, 20, 30);
@@ -32,6 +47,7 @@ public class to_test_graph {
 		
 		g.find("d").tag = new MyTag(230, 27, 20, 30);
 		g.find("e").tag = new MyTag(130, 200, 20, 30);
+		g.find("f").tag = new MyTag(290, 170, 20, 30);
 		
 		Figures.show(640, 480, x -> g.draw(x));
 	}
