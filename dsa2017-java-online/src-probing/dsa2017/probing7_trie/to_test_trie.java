@@ -18,6 +18,10 @@ public class to_test_trie {
 		
 		{ String s="she"; System.out.println("("+s+" inside tree)=" + t.contains(s));}
 		{ String s="shed"; System.out.println("("+s+" inside tree)=" + t.contains(s));}
+		
+		t.remove("she");
+		t.remove("by");
+		t.dump();
 	}
 
 }

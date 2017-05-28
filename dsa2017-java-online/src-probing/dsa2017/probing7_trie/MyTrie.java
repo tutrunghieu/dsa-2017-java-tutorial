@@ -30,7 +30,13 @@ public class MyTrie {
 
 	public boolean contains(String key)
 	{
-		MyTrieNode t = root;
+		MyTrieNode t = find(key, root);
+		return t != null && t.tag != null;
+	}
+
+	private MyTrieNode find(String key, MyTrieNode p) 
+	{
+		MyTrieNode t = p;
 		
 		for(int k=0; k<key.length(); k++) 
 		{
@@ -38,7 +44,29 @@ public class MyTrie {
 			if(t == null) break;
 		}
 		
-		return t != null && t.tag != null;
+		return t;
+	}
+
+	public void remove(String key)
+	{
+		MyTrieNode t = find(key, root);
+		
+		if(t == null) return;
+		
+		System.out.println("To remove " + t);
+		t.tag = null;
+		
+		while(t != root) 
+		{
+			if(t.tag != null) break;
+			if(t.hasChildren()) break;
+			
+			MyTrieNode p = t.parent;
+			p.remove(t);
+			t = p;
+		}
+		
+		return;
 	}
 
 }
