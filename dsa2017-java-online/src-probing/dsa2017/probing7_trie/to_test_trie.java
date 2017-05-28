@@ -4,7 +4,7 @@ public class to_test_trie {
 
 	public static void main(String[] args) 
 	{
-		MyTree t = new MyTree();
+		MyTrie t = new MyTrie();
 		t.add("she", 0);
 		t.add("sell", 1);
 		t.add("sea", 2);
@@ -16,7 +16,8 @@ public class to_test_trie {
 		
 		t.dump();
 		
-		{ String s="she"; System.out.println("t.contains("+s+")=" + t.contains(s));}
+		{ String s="she"; System.out.println("("+s+" inside tree)=" + t.contains(s));}
+		{ String s="shed"; System.out.println("("+s+" inside tree)=" + t.contains(s));}
 	}
 
 }
