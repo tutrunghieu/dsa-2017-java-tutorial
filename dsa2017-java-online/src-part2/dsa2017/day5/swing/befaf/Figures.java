@@ -28,9 +28,12 @@ public class Figures
 		return res;
 	}
 
+	private static int CNT_FIGURE = 1;
 	public static void show(int W, int H, PaintListener g)
 	{
 		JFrame f = new JFrame();
+		
+		f.setTitle("figure " + CNT_FIGURE);
 		f.setSize(W, H);
 		f.setLocationRelativeTo(null);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
