@@ -15,14 +15,25 @@ public class to_test_graph {
 		MyLink ab = g.add(new MyLink(a, b)); 
 		MyLink bc = g.add(new MyLink(b, c)); 
 		
-		a.tag = new MyTag(10, 10, 20, 30);
-		b.tag = new MyTag(70, 120, 20, 30);
-		c.tag = new MyTag(140, 35, 20, 30);
+		MyNode d = g.add(new MyNode("d")); 
+		MyNode e = g.add(new MyNode("e")); 
+		MyLink de = g.add(new MyLink(d, e)); 
 		
-		Figures.show(640, 480, x -> {
-			x.translate(30, 40);
-			g.draw(x);	
-		});
+		g.dump();
+		
+		placeAndDraw(g);		
+	}
+
+	private static void placeAndDraw(MyGraph g) 
+	{
+		g.find("a").tag = new MyTag(10, 10, 20, 30);
+		g.find("b").tag = new MyTag(70, 120, 20, 30);
+		g.find("c").tag = new MyTag(140, 35, 20, 30);
+		
+		g.find("d").tag = new MyTag(230, 27, 20, 30);
+		g.find("e").tag = new MyTag(130, 200, 20, 30);
+		
+		Figures.show(640, 480, x -> g.draw(x));
 	}
 
 }

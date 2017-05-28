@@ -8,8 +8,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-import dsa2017.probing7_graph.MyGraph;
-
 public class Figures 
 {
 	public static Color nextColor() 
