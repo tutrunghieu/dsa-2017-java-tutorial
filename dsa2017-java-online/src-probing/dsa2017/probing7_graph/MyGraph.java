@@ -43,7 +43,7 @@ public class MyGraph
 			g.setColor(Color.yellow);
 			g.fillRect(tk.x, tk.y, tk.width, tk.height);
 			g.setColor(Color.black);
-			g.drawString(nk.data + "", tk.x, tk.y + 3*tk.height/4);
+			g.drawString(nk.data + "", tk.x + 5, tk.y + 3*tk.height/4);
 		}
 		
 		return;

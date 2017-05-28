@@ -21,10 +21,16 @@ public class to_test_graph {
 		MyLink de = g.add(new MyLink(d, e)); 
 		MyLink df = g.add(new MyLink(d, f)); 
 		
+		MyNode x = g.add(new MyNode("x")); 
+		MyNode y = g.add(new MyNode("y")); 
+		MyLink xb = g.add(new MyLink(x, b)); 
+		MyLink xc = g.add(new MyLink(x, c)); 
+		MyLink xy = g.add(new MyLink(x, y)); 
+		
 		g.dump();
 		
-		//placeAndDraw(g);		
-		placeRandomAndDraw(g);		
+		placeAndDraw(g);		
+		//placeRandomAndDraw(g);		
 	}
 
 	protected static void placeRandomAndDraw(MyGraph g) 
@@ -41,15 +47,17 @@ public class to_test_graph {
 	
 	protected static void placeAndDraw(MyGraph g) 
 	{
-		g.find("a").tag = new MyTag(10, 10, 20, 30);
+		g.find("a").tag = new MyTag(10, 70, 20, 30);
 		g.find("b").tag = new MyTag(70, 120, 20, 30);
-		g.find("c").tag = new MyTag(140, 35, 20, 30);
+		g.find("c").tag = new MyTag(140, 100, 20, 30);
 		
 		g.find("d").tag = new MyTag(230, 27, 20, 30);
 		g.find("e").tag = new MyTag(130, 200, 20, 30);
 		g.find("f").tag = new MyTag(290, 170, 20, 30);
+		g.find("x").tag = new MyTag(60, 10, 20, 30);
+		g.find("y").tag = new MyTag(170, 15, 20, 30);
 		
-		Figures.show(640, 480, x -> g.draw(x));
+		Figures.show(640, 480, x -> { x.translate(30, 30); g.draw(x); });
 	}
 
 }
