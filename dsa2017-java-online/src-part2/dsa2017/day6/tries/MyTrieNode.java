@@ -1,4 +1,4 @@
-package dsa2017.probing7_trie;
+package dsa2017.day6.tries;
 
 import java.util.ArrayList;
 import java.util.List;
