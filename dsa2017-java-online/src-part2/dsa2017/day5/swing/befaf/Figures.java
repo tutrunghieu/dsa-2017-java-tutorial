@@ -40,7 +40,7 @@ public class Figures
 		
 		JPictureBox b = new JPictureBox();
 		b.paintAction = g;
-		b.setPreferredSize(new Dimension(W, H));
+		b.setPreferredSize(new Dimension(1000, 1000));
 		
 		JScrollPane outer = new JScrollPane(b);
 		
