@@ -2,7 +2,7 @@ package apps.ltg.modules;
 
 import java.awt.event.ActionEvent;
 
-public class LtgModuleTree {
+public class LtgModuleTree extends __Base_Module {
 
 	public Object actionTreeNew(ActionEvent x) {
 		// TODO Auto-generated method stub
