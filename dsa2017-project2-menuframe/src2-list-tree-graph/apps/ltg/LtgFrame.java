@@ -3,6 +3,9 @@ package apps.ltg;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 import apps.MyFirstApp.utils.MenuFrame;
 import apps.ltg.modules.LtgModuleGraph;
 import apps.ltg.modules.LtgModuleList;
@@ -11,14 +14,27 @@ import apps.ltg.modules.LtgModuleTree;
 @SuppressWarnings("serial")
 public class LtgFrame extends MenuFrame 
 {
+	//GUI elements
+	protected JTextArea mainView;
+	protected JScrollPane mainOuter;
+	
+	//modules
 	protected LtgModuleList menuFile = new LtgModuleList();
 	protected LtgModuleTree menuEdit = new LtgModuleTree();
 	protected LtgModuleGraph menuHelp = new LtgModuleGraph();
 	
+	//adding GUL elements
 	public LtgFrame()
 	{
 		this.setTitle("Ltg");
+		this.add(mainOuter = new JScrollPane(mainView = new JTextArea()));
 		
+		this.bind();
+	}
+
+	//binding GUI elements to target module
+	private void bind() 
+	{
 		super.menuPut("list", newJMenu("List", 'L'));
 		super.menuPut("list/new", newJMenuItem("New", 'N', KeyEvent.VK_1, ActionEvent.SHIFT_MASK | ActionEvent.CTRL_MASK), x -> menuFile.actionNew(x));
 		super.menuPut("list/open", newJMenuItem("Open", 'O', KeyEvent.VK_2, ActionEvent.SHIFT_MASK | ActionEvent.CTRL_MASK), x -> menuFile.actionLoad(x));
@@ -48,13 +64,20 @@ public class LtgFrame extends MenuFrame
 		super.menuPut("graph/add-link", newJMenuItem("Add link", 'D', KeyEvent.VK_7, ActionEvent.CTRL_MASK), x -> menuHelp.actionAddLink(x));
 		super.menuPut("graph/remove-link", newJMenuItem("Remove link", 'L', KeyEvent.VK_8, ActionEvent.CTRL_MASK), x -> menuHelp.actionRemoveLink(x));
 		
-		super.menuDump();
+		super.menuDump();		
 	}
 
+	private static LtgFrame __frame;
+	
+	public static LtgFrame useFrame()
+	{
+		return __frame;
+	}
+	
 	public static void main(String[] args) 
 	{
-		MenuFrame f = new LtgFrame();
-		f.setVisible(true);
+		__frame = new LtgFrame();
+		__frame.setVisible(true);
 	}
 	
 }
