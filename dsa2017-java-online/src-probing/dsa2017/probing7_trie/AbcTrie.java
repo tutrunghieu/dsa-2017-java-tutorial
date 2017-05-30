@@ -1,12 +1,12 @@
 package dsa2017.probing7_trie;
 
-public class MyTrie {
+public class AbcTrie {
 
-	protected MyTrieNode root = new MyTrieNode();
+	protected AbcTrieNode root = new AbcTrieNode();
 	
 	public void add(String key, int n) 
 	{
-		MyTrieNode t = root;
+		AbcTrieNode t = root;
 		
 		for(int k=0; k<key.length(); k++) 
 		{
@@ -21,22 +21,28 @@ public class MyTrie {
 		dump(root, "");
 	}
 	
-	private void dump(MyTrieNode p, String r) 
+	private void dump(AbcTrieNode p, String r) 
 	{
 		String r1 = r + (p.data ==0 ? "": p.data);
 		if(p.tag != null) System.out.println(r1 + " >> " + p.tag);
-		for(MyTrieNode pk: p.getChildren()) dump(pk, r1);
+		for(AbcTrieNode pk: p.getChildren()) dump(pk, r1);
 	}
 
 	public boolean contains(String key)
 	{
-		MyTrieNode t = find(key, root);
+		AbcTrieNode t = find(key, root);
 		return t != null && t.tag != null;
 	}
 
-	private MyTrieNode find(String key, MyTrieNode p) 
+	public void dumpPref(String s) 
 	{
-		MyTrieNode t = p;
+		AbcTrieNode t = find(s, root);
+		if(t != null) dump(t, s + "/");		
+	}
+	
+	private AbcTrieNode find(String key, AbcTrieNode p) 
+	{
+		AbcTrieNode t = p;
 		
 		for(int k=0; k<key.length(); k++) 
 		{
@@ -47,26 +53,25 @@ public class MyTrie {
 		return t;
 	}
 
-	public void remove(String key)
-	{
-		MyTrieNode t = find(key, root);
+	public void remove(String key) {
+		AbcTrieNode t = find(key, root);
 		
 		if(t == null) return;
 		
 		System.out.println("To remove " + t);
 		t.tag = null;
 		
-		while(t != root) 
-		{
+		while(t != root) {
 			if(t.tag != null) break;
 			if(t.hasChildren()) break;
 			
-			MyTrieNode p = t.parent;
+			AbcTrieNode p = t.parent;
 			p.remove(t);
 			t = p;
 		}
 		
 		return;
 	}
+
 
 }

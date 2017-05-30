@@ -295,4 +295,33 @@ public class AvlTree
 		link(p, q, LEFT);
 	}
 
+	public void rotate_R2_B(AvlNode p) 
+	{
+		AvlNode g, q, a, b, c;
+		g = p.parent; q = p.right; 
+		a = p.left; b = q.left; c = q.right;
+		
+		linkRoot(q, g, p);
+		link(a, p, LEFT);
+		link(b, p, RIGHT);
+		link(c, q, RIGHT);
+		link(p, q, LEFT);
+	}
+
+	public void rotate_R2_L1_L1(AvlNode p) {
+		AvlNode g, q, a, b, c, d, r;
+		g = p.parent; q = p.right; r = q.left; 
+		a = p.left; b = r.left; c = r.right;
+		d = q.right;
+		
+		linkRoot(r, g, p);
+		link(a, p, LEFT);
+		link(b, p, RIGHT);
+		link(c, q, LEFT);
+		link(d, q, RIGHT);
+		
+		link(p, r, LEFT);
+		link(q, r, RIGHT);
+	}
+
 }
