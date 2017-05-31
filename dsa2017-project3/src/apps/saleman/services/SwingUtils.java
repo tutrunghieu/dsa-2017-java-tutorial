@@ -1,4 +1,4 @@
-package apps.saleman;
+package apps.saleman.services;
 
 import java.util.List;
 
