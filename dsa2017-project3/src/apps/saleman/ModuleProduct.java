@@ -13,14 +13,30 @@ private List<Tab_Product> items;
 
 	//	Product list:
 //		1.1.      Load data from file
-	public void inputData() throws Exception
+	public void inputData() 
 	{
-		items = Json.readList(dataFile, Tab_Product.class);				
+		try {
+			items = Json.readList(dataFile, Tab_Product.class);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}				
 	}
 //		1.2.      Input & add new item
 	public void addItem(Tab_Product t) {
 		items.add(t);
 	}
+	
+	public void addItem()
+	{
+		Tab_Product t = new Tab_Product();
+		t.pcode = "abc";
+		t.pro_name = "thu them";
+		t.price = 1234.0;
+		
+		addItem(t);
+	}	
+	
 //		1.3.      Display data
 	public void displayData() {
 		for(Tab_Product ik: items)
@@ -52,6 +68,6 @@ private List<Tab_Product> items;
 	public void sortBy_pcode() {}	
 	
 //		1.8.      Delete the node after the node having code = xCode
-	public void deleteAfter_pcode() {}	
+	public void deleteAfter_pcode() {}
 
 }

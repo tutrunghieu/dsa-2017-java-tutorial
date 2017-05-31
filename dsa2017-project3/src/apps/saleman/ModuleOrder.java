@@ -20,9 +20,14 @@ public class ModuleOrder
 	private List<Tab_Order> items;
 	//Order list:
 	//3.1.      Input data
-	public void inputData() throws Exception
+	public void inputData() 
 	{
-		items = Json.readList(dataFile, Tab_Order.class);		
+		try {
+			items = Json.readList(dataFile, Tab_Order.class);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 	//3.2.  Display data with total value
 	public void displayDataWithTotal()
