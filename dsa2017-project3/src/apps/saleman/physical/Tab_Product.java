@@ -8,9 +8,15 @@ package apps.saleman.physical;
 //5.	price (double): The price of the product.
 public class Tab_Product 
 {
+	@Override
+	public String toString() {
+		return "Tab_Product [pcode=" + pcode + ", pro_name=" + pro_name + ", quantity=" + quantity + ", sale=" + sale
+				+ ", price=" + price + "]";
+	}
 	public String pcode;
 	public String pro_name;
 	public Integer quantity;
 	public Integer sale;
 	public Double price;
+	public String pro_image_url;
 }
