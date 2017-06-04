@@ -1,7 +1,11 @@
 package dsa2017.probing8_graph;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Stack;
 
 import dsa2017.day5.swing.befaf.Figures;
 import dsa2017.probing7_graph.MyGraph;
@@ -17,11 +21,13 @@ public class to_test_dijkstra_shortest_path
 		MyGraph g = new MyGraph();
 		
 		MyNode n1 = g.add(new MyNode("1")); 
-		MyNode n2 = g.add(new MyNode("2")); 
-		MyNode n3 = g.add(new MyNode("3")); 
-		MyNode n4 = g.add(new MyNode("4")); 
-		MyNode n5 = g.add(new MyNode("5")); 
+		
 		MyNode n6 = g.add(new MyNode("6")); 
+		MyNode n3 = g.add(new MyNode("3")); 
+		MyNode n2 = g.add(new MyNode("2")); 
+
+		MyNode n5 = g.add(new MyNode("5")); 
+		MyNode n4 = g.add(new MyNode("4")); 
 		
 		g.add(new MyLink(n1, n6, 14)); 
 		g.add(new MyLink(n1, n3, 9)); 
@@ -50,6 +56,31 @@ public class to_test_dijkstra_shortest_path
 			double dk = (gk==src ? 0 : Double.POSITIVE_INFINITY);
 			nodes.put(gk, new DijkNode(gk, dk));
 		}
+		
+		Queue<DijkNode> todo = new PriorityQueue<DijkNode>( (x, y) -> (int)Math.signum(x.distance - y.distance));
+		todo.add( nodes.get(src) );
+		
+		while(!todo.isEmpty()) 
+		{
+			DijkNode nk = todo.remove();
+			if( nk.visited) continue;
+			nk.visited = true;
+			
+			for(MyLink lj: nk.original.links)
+			{
+				DijkNode nj = nodes.get( lj.getAdjacent(nk.original) );
+				if(nj.visited) continue;
+				
+				double dj = lj.linkDist + nk.distance;
+				if(dj >= nj.distance) continue;
+				System.out.println("exporing " + nj.original.data);
+				
+				nj.distance = dj;
+				nj.parent = nk.original;
+				todo.add(nj);
+			} //there are links to explore
+						
+		} //there is still active head
 		
 		print(nodes);
 	}
