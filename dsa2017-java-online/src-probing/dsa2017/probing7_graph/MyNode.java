@@ -19,4 +19,17 @@ public class MyNode {
 		links.add(n);
 	}
 
+	public double getWeight(MyNode nk)
+	{
+		if(nk==this) return 0;
+		
+		for(MyLink lj: links)
+		{
+			if(lj.linkFrom==nk || lj.linkFrom==nk) return lj.linkDist;
+		}
+		
+		return Double.POSITIVE_INFINITY;
+	}
+
+
 }

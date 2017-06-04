@@ -7,10 +7,17 @@ public class to_test_dijkstra_shortest_path
 
 	public static void main(String[] args) 
 	{
+		MyGraph g = DijkCase2.create();		
+		DijkCase2.placeAndDraw(g);
+		
+		DijkEngine.shortestPath(g, g.find("1"));
+	}
+	
+	public static void main1(String[] args) 
+	{
 		MyGraph g = DijkCase1.create();		
 		DijkCase1.placeAndDraw(g);
 		
 		DijkEngine.shortestPath(g, g.find("1"));
 	}
-	
 }
