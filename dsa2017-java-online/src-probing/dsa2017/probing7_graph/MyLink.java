@@ -41,4 +41,9 @@ public class MyLink {
 		else return null;
 	}
 
+	public static int compareDist(MyLink x, MyLink y)
+	{
+		return (int)Math.signum(x.linkDist - y.linkDist);
+	}
+
 }
