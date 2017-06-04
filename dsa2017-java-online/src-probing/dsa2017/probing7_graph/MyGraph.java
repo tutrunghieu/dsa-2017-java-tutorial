@@ -22,8 +22,11 @@ public class MyGraph
 
 	public MyLink add(MyLink n) 
 	{
-		links.add(n);
-		n.linkFrom.addLink(n);
+		links.add(n); //global list of links
+		
+		n.linkFrom.addLink(n); //local list of link from
+		n.linkTo.addLink(n); //local list of link to
+
 		return n;
 	}
 
@@ -35,6 +38,9 @@ public class MyGraph
 			Point t2 = ek.linkTo.tag.getCenter();
 			g.setColor(Color.black);
 			g.drawLine(t1.x, t1.y, t2.x, t2.y);
+			
+			Point t12 = ek.getMidPoint();
+			g.drawString((int)ek.linkDist + "", t12.x, t12.y);
 		}
 		
 		for(MyNode nk: nodes)

@@ -1,5 +1,7 @@
 package dsa2017.probing7_graph;
 
+import java.awt.Point;
+
 public class MyLink {
 
 	public MyNode linkFrom;
@@ -20,6 +22,14 @@ public class MyLink {
 		linkTo = b;
 		linkDir = true; 
 		linkDist = d;
+	}
+
+	public Point getMidPoint() 
+	{
+		Point t1 = linkFrom.tag.getCenter();
+		Point t2 = linkTo.tag.getCenter();
+		
+		return new Point((t1.x+t2.x)/2, (t1.y+t2.y)/2);
 	}
 
 }

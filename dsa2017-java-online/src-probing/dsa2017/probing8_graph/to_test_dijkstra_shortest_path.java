@@ -1,6 +1,13 @@
-package dsa2017.probing7_graph;
+package dsa2017.probing8_graph;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import dsa2017.day5.swing.befaf.Figures;
+import dsa2017.probing7_graph.MyGraph;
+import dsa2017.probing7_graph.MyLink;
+import dsa2017.probing7_graph.MyNode;
+import dsa2017.probing7_graph.MyTag;
 
 public class to_test_dijkstra_shortest_path 
 {
@@ -30,23 +37,42 @@ public class to_test_dijkstra_shortest_path
 		g.add(new MyLink(n5, n4, 6)); 
 		
 		placeAndDraw(g);
+		
+		shortestPath(g, g.find("1"));
 	}
 	
+	private static void shortestPath(MyGraph g, MyNode src) 
+	{
+		Map<MyNode, DijkNode> nodes = new LinkedHashMap<MyNode, DijkNode>();
+		
+		for(MyNode gk: g.getNodes()) 
+		{
+			double dk = (gk==src ? 0 : Double.POSITIVE_INFINITY);
+			nodes.put(gk, new DijkNode(gk, dk));
+		}
+		
+		print(nodes);
+	}
+
+	private static void print(Map<MyNode, DijkNode> nodes)
+	{
+		for(DijkNode nk: nodes.values())
+			System.out.println(nk);		
+	}
+
 	protected static void placeAndDraw(MyGraph g) 
 	{
 		g.dump();
 		
 		g.find("1").tag = new MyTag(10, 120, 20, 30);
 
-		g.find("6").tag = new MyTag(30, 30, 20, 30);
-		g.find("3").tag = new MyTag(50, 130, 20, 30);
-		g.find("2").tag = new MyTag(30, 200, 20, 30);
+		g.find("6").tag = new MyTag(140, 30, 20, 30);
+		g.find("3").tag = new MyTag(150, 130, 20, 30);
+		g.find("2").tag = new MyTag(140, 200, 20, 30);
 		
-		g.find("5").tag = new MyTag(200, 70, 20, 30);
-		g.find("4").tag = new MyTag(230, 200, 20, 30);
+		g.find("5").tag = new MyTag(300, 70, 20, 30);
+		g.find("4").tag = new MyTag(330, 200, 20, 30);
 		
 		Figures.show(640, 480, x -> { x.translate(30, 30); g.draw(x); });
 	}
-	
-
 }
