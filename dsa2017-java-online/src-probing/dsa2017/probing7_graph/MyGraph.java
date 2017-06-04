@@ -92,4 +92,9 @@ public class MyGraph
 	{
 		return nodes;
 	}
+
+	public List<MyLink> getLinks() 
+	{
+		return links;
+	}
 }
