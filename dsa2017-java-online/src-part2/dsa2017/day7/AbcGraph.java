@@ -9,18 +9,18 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
-public class MyGraph 
+public class AbcGraph 
 {
-	protected List<MyNode> nodes = new ArrayList<MyNode>();
-	protected List<MyLink> links = new ArrayList<MyLink>();
+	protected List<AbcNode> nodes = new ArrayList<AbcNode>();
+	protected List<AbcLink> links = new ArrayList<AbcLink>();
 
-	public MyNode add(MyNode n) 
+	public AbcNode add(AbcNode n) 
 	{
 		nodes.add(n);
 		return n;
 	}
 
-	public MyLink add(MyLink n) 
+	public AbcLink add(AbcLink n) 
 	{
 		links.add(n);
 		n.linkFrom.addLink(n);
@@ -29,7 +29,7 @@ public class MyGraph
 
 	public void draw(Graphics g) 
 	{
-		for(MyLink ek: links)
+		for(AbcLink ek: links)
 		{
 			Point t1 = ek.linkFrom.tag.getCenter();
 			Point t2 = ek.linkTo.tag.getCenter();
@@ -37,9 +37,9 @@ public class MyGraph
 			g.drawLine(t1.x, t1.y, t2.x, t2.y);
 		}
 		
-		for(MyNode nk: nodes)
+		for(AbcNode nk: nodes)
 		{
-			MyTag tk = nk.tag;
+			AbcTag tk = nk.tag;
 			g.setColor(Color.yellow);
 			g.fillRect(tk.x, tk.y, tk.width, tk.height);
 			g.setColor(Color.black);
@@ -50,21 +50,21 @@ public class MyGraph
 	}
 
 	public void dump() {
-		Set<MyNode> visited = new LinkedHashSet<MyNode>();
-		Stack<MyNode> todo = new Stack<MyNode>();
+		Set<AbcNode> visited = new LinkedHashSet<AbcNode>();
+		Stack<AbcNode> todo = new Stack<AbcNode>();
 		
-		for(MyNode root: nodes) {
+		for(AbcNode root: nodes) {
 			if(visited.contains(root)) continue;
 			System.out.println("==== root: " + root.data);
 			todo.push(root);
 			
 			while(!todo.isEmpty()) {
-				MyNode nj = todo.pop();
+				AbcNode nj = todo.pop();
 				System.out.println("visiting node: " + nj.data);
 				visited.add(nj);
 				
-				for(MyLink lj: nj.links) {
-					MyNode nk = lj.linkTo;
+				for(AbcLink lj: nj.links) {
+					AbcNode nk = lj.linkTo;
 					if(! visited.contains(nk) ) todo.push(nk);
 				}
 			} //inside node
@@ -73,13 +73,13 @@ public class MyGraph
 		return;
 	}
 
-	public MyNode find(String a)
+	public AbcNode find(String a)
 	{
-		for(MyNode nk: nodes) if(a.equals(nk.data)) return nk;
+		for(AbcNode nk: nodes) if(a.equals(nk.data)) return nk;
 		return null;
 	}
 
-	public List<MyNode> getNodes() 
+	public List<AbcNode> getNodes() 
 	{
 		return nodes;
 	}

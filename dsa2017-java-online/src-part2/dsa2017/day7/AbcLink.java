@@ -1,20 +1,20 @@
 package dsa2017.day7;
 
-public class MyLink {
+public class AbcLink {
 
-	public MyNode linkFrom;
-	public MyNode linkTo;
+	public AbcNode linkFrom;
+	public AbcNode linkTo;
 	public boolean linkDir;
 	public double linkDist;
 
-	public MyLink(MyNode a, MyNode b) 
+	public AbcLink(AbcNode a, AbcNode b) 
 	{
 		linkFrom = a;
 		linkTo = b;
 		linkDir = true; 
 	}
 
-	public MyLink(MyNode a, MyNode b, double d) 
+	public AbcLink(AbcNode a, AbcNode b, double d) 
 	{
 		linkFrom = a;
 		linkTo = b;

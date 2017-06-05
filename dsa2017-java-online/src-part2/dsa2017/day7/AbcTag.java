@@ -2,9 +2,9 @@ package dsa2017.day7;
 
 import java.awt.Point;
 
-public class MyTag {
+public class AbcTag {
 
-	public MyTag(int a, int b, int c, int d) 
+	public AbcTag(int a, int b, int c, int d) 
 	{
 		x = a;
 		y = b;
