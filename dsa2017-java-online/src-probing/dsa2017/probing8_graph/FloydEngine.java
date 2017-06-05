@@ -9,6 +9,7 @@ public class FloydEngine
 	{
 		FloydTable t = new FloydTable();
 		
+		//set t(nj, nk) = weight(nj, nk)
 		for(MyNode nj: g.getNodes())
 		for(MyNode nk: g.getNodes())
 		{
@@ -19,6 +20,8 @@ public class FloydEngine
 		int cnt = 0;
 		print(t, g, cnt++);
 	
+		//compute the indirect path
+		//ni and nj via nk
 		for(MyNode nk: g.getNodes()) {
 			for(MyNode ni: g.getNodes())
 			for(MyNode nj: g.getNodes())

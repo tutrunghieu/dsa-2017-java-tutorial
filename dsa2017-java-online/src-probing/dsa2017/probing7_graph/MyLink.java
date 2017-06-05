@@ -6,6 +6,13 @@ import dsa2017.probing8_graph.DijkNode;
 
 public class MyLink {
 
+	@Override
+	public String toString() {
+		return "(" + linkFrom.data 
+				+"---" +(int)linkDist
+				+ "---" + linkTo.data + ")";
+	}
+
 	public MyNode linkFrom;
 	public MyNode linkTo;
 	public boolean linkDir;
