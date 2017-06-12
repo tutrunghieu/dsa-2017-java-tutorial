@@ -41,9 +41,9 @@ public class to_test_countsort_msd {
 			List<String> gk = G.get(nk);
 			if(d+1<nd && gk.size() > 1) 
 				gk = radixSortMsd(gk, d+1, nd);
-			//System.out.println("adding " + nk + ": " + gk);
+//			System.out.println("adding " + nk + ": " + gk);
 			
-			res.addAll( G.get(nk) );			
+			res.addAll(gk);			
 		}
 		
 		return res;
