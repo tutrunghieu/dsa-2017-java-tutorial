@@ -71,16 +71,29 @@ public class SearchTreeDsw extends SearchTree
 		
 		return s;
 	}
-
-	public void fold(int c) {
-		while(true) {
+	
+	public void fold() 
+	{
+		int cnt = 0;
+		for(SearchNode x1 = root; x1 != null; x1 = x1.right) cnt++;
+		System.out.println("count=" + cnt);
+		
+		SearchNode r1 = root;
+		
+		cnt = (cnt+cnt%2-1)/2;
+		for(int k=0; k<cnt; k++) r1 = r1.right;
+		System.out.println("data=" + r1.data);
+	
+		int c = r1.data;
+		while(root.data < c) 
+		{
 			SearchNode x1 = root;
-			while(x1 != null) {
+			while(x1 != null && root.data < c) 
+			{
 				x1 = fold(x1);
-				if(root.data == c) break;
 			}
-			if(root.data == c) break;
 		}
+		
 		return;
 	}
 
